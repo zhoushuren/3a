@@ -11,7 +11,6 @@ export enum ChainId {
   BSC = 56,
   ARB = 42161,
   BSC_TESTNET = 97,
-
 }
 
 export enum TradeType {
@@ -98,6 +97,14 @@ export const WETH9 = {
     'Wrapped Ether',
     'https://weth.io'
   ),
+  [ChainId.ARB]: new Token(
+      ChainId.ARB,
+      '0x82aF49447D8a07e3bd95BD0d56f35241523fBab1',
+      18,
+      'WETH',
+      'Wrapped Ether',
+      'https://weth.io'
+  ),
 }
 
 export const WBNB = {
@@ -128,6 +135,7 @@ export const WBNB = {
 }
 
 export const WNATIVE: Record<number, Token> = {
+  [ChainId.ARB]: WETH9[ChainId.ARB],
   [ChainId.ETHEREUM]: WETH9[ChainId.ETHEREUM],
   [ChainId.RINKEBY]: WETH9[ChainId.RINKEBY],
   [ChainId.GOERLI]: WETH9[ChainId.GOERLI],
@@ -144,6 +152,7 @@ export const NATIVE: Record<
   }
 > = {
   [ChainId.ETHEREUM]: { name: 'Ether', symbol: 'ETH', decimals: 18 },
+  [ChainId.ARB]: { name: 'Ether', symbol: 'ETH', decimals: 18 },
   [ChainId.RINKEBY]: { name: 'Rinkeby Ether', symbol: 'RIN', decimals: 18 },
   [ChainId.GOERLI]: { name: 'Goerli Ether', symbol: 'GOR', decimals: 18 },
   [ChainId.BSC]: {

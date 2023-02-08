@@ -61,7 +61,7 @@ const GlobalCheckClaim: React.FC<React.PropsWithChildren<GlobalCheckClaimStatusP
     }
 
     if (account) {
-      fetchClaimAnniversaryStatus()
+      // fetchClaimAnniversaryStatus() // 暂时不知道有啥用，反正先关闭。
     }
   }, [account, canClaim])
 

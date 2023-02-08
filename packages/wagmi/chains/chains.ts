@@ -114,7 +114,7 @@ export const bscTest: Chain = {
   },
   testnet: true,
 }
-
+const arbExplorer = { name: 'ArbScan', url: 'https://arbiscan.io/' }
 export const arb: Chain = {
   id: 42161,
   name: 'Arbitrum',
@@ -124,8 +124,8 @@ export const arb: Chain = {
     default: 'https://arb1.arbitrum.io/rpc',
   },
   blockExplorers: {
-    default: bscExplorer,
-    etherscan: bscExplorer,
+    default: arbExplorer,
+    etherscan: arbExplorer,
   },
   nativeCurrency: {
     name: 'ETH',
