@@ -93,6 +93,7 @@ const config = {
     ]
   },
   async redirects() {
+
     return [
       {
         source: '/send',

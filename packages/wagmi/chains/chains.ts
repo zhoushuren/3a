@@ -115,4 +115,27 @@ export const bscTest: Chain = {
   testnet: true,
 }
 
+export const arb: Chain = {
+  id: 42161,
+  name: 'Arbitrum',
+  network: 'Arbitrum',
+  rpcUrls: {
+    public: 'https://arb1.arbitrum.io/rpc',
+    default: 'https://arb1.arbitrum.io/rpc',
+  },
+  blockExplorers: {
+    default: bscExplorer,
+    etherscan: bscExplorer,
+  },
+  nativeCurrency: {
+    name: 'ETH',
+    symbol: 'ETH',
+    decimals: 18,
+  },
+  // multicall: {
+  //   address: '0xcA11bde05977b3631167028862bE2a173976CA11',
+  //   blockCreated: 15921452,
+  // },
+}
+
 export { rinkeby, mainnet, goerli }

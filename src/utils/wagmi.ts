@@ -1,5 +1,5 @@
 import { BinanceWalletConnector } from '@pancakeswap/wagmi/connectors/binanceWallet'
-import { bsc, bscTest, goerli, rinkeby } from '@pancakeswap/wagmi/chains'
+import {arb, bsc, bscTest, goerli, rinkeby} from '@pancakeswap/wagmi/chains'
 import { configureChains, createClient } from 'wagmi'
 import memoize from 'lodash/memoize'
 import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
@@ -16,6 +16,7 @@ const CHAINS = [
   bscTest,
   rinkeby,
   goerli,
+  arb
 ]
 
 const getNodeRealUrl = (networkName: string) => {
@@ -55,7 +56,7 @@ const getNodeRealUrl = (networkName: string) => {
 export const { provider, chains } = configureChains(CHAINS, [
   jsonRpcProvider({
     rpc: (chain) => {
-      if (!!process.env.NEXT_PUBLIC_NODE_PRODUCTION && chain.id === bsc.id) {
+      if (!!process.env.NEXT_PUBLIC_NODE_PRODUCTION && chain.id === arb.id) {
         return { http: process.env.NEXT_PUBLIC_NODE_PRODUCTION }
       }
       return getNodeRealUrl(chain.network) || { http: chain.rpcUrls.default }

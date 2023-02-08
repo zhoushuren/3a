@@ -29,7 +29,7 @@ const StyledNav = styled.nav`
   background-color: ${({ theme }) => theme.nav.background};
   border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
   transform: translate3d(0, 0, 0);
-
+  background-color: #836CEA;
   padding-left: 16px;
   padding-right: 16px;
 `;
@@ -135,11 +135,6 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
               {!isMobile && <MenuItems items={links} activeItem={activeItem} activeSubItem={activeSubItem} ml="24px" />}
             </Flex>
             <Flex alignItems="center" height="100%">
-              {!isMobile && !isMd && (
-                <Box mr="12px">
-                  <CakePrice showSkeleton={false} cakePriceUsd={cakePriceUsd} />
-                </Box>
-              )}
               <Box mt="4px">
                 <LangSelector
                   currentLang={currentLang}

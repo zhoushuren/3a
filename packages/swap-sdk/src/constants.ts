@@ -9,7 +9,9 @@ export enum ChainId {
   RINKEBY = 4,
   GOERLI = 5,
   BSC = 56,
+  ARB = 42161,
   BSC_TESTNET = 97,
+
 }
 
 export enum TradeType {

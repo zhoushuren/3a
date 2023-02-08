@@ -1,3 +1,5 @@
+import StyledMenuItem from "@pancakeswap/uikit/src/components/MenuItem/styles";
+
 export const baseColors = {
   white: 'white',
   failure: '#ED4B9E',
@@ -25,9 +27,9 @@ export const additionalColors = {
 export const lightColors = {
   ...baseColors,
   ...additionalColors,
-  secondary: '#7645D9',
+  secondary: '#eee6ee',
   secondary80: '#7645D980',
-  background: '#FAF9FA',
+  background: '#836CEA',
   backgroundDisabled: '#E9EAEB',
   backgroundAlt: '#FFFFFF',
   backgroundAlt2: 'rgba(255, 255, 255, 0.7)',
@@ -38,11 +40,12 @@ export const lightColors = {
   invertedContrast: '#FFFFFF',
   input: '#eeeaf4',
   inputSecondary: '#d7caec',
-  tertiary: '#EFF4F5',
+  tertiary: '#9bc3f6',
   text: '#280D5F',
   text99: '#280D5F99',
   textDisabled: '#BDC2C4',
-  textSubtle: '#7A6EAA',
+  textSubtle: '#d0cae7',
+  textMenu: '#FFE600',
   disabled: '#E9EAEB',
   gradientBubblegum: 'linear-gradient(139.73deg, #E5FDFF 0%, #F3EFFF 100%)',
   gradientInverseBubblegum: 'linear-gradient(139.73deg, #F3EFFF 0%, #E5FDFF 100%)',
@@ -75,6 +78,7 @@ export const darkColors = {
   text99: '#F4EEFF99',
   textDisabled: '#666171',
   textSubtle: '#B8ADD2',
+  textMenu: '#FFE600',
   disabled: '#524B63',
   gradientBubblegum: 'linear-gradient(139.73deg, #313D5C 0%, #3D2A54 100%)',
   gradientInverseBubblegum: 'linear-gradient(139.73deg, #3D2A54 0%, #313D5C 100%)',
