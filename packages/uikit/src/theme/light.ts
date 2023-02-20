@@ -10,6 +10,7 @@ import { light as lightModal } from "../widgets/Modal/theme";
 import base from "./base";
 import { lightColors } from "./colors";
 
+
 const lightTheme: DefaultTheme = {
   ...base,
   isDark: false,
@@ -23,5 +24,7 @@ const lightTheme: DefaultTheme = {
   radio: lightRadio,
   tooltip: lightTooltip,
 };
+
+
 
 export default lightTheme;
