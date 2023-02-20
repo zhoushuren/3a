@@ -8,6 +8,7 @@ console.log(tokens,'aaaaaaaaaaaaaaaaaaaaaa')
 tokens.colors.light.cardBorder = '#42C18E'
 tokens.colors.light.primary = '#0FA68D'
 tokens.colors.light.secondary = '#999999'
+tokens.colors.light.background = 'white'
 tokens.colors.light.text = '#0FA68D'
 tokens.colors.dark.backgroundAlt = 'rgb(255, 255, 255)'
 tokens.colors.light.backgroundAlt2 = 'rgb(255, 255, 255)'
