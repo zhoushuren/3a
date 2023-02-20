@@ -17,7 +17,7 @@ import { useActiveChainId } from 'hooks/useActiveChainId'
 import useAuth from 'hooks/useAuth'
 import NextLink from 'next/link'
 import { useEffect, useState } from 'react'
-// import { useProfile } from 'state/profile/hooks'
+import { useProfile } from 'state/profile/hooks'
 import { usePendingTransactions } from 'state/transactions/hooks'
 import { useAccount } from 'wagmi'
 import ProfileUserMenuItem from './ProfileUserMenuItem'
@@ -30,12 +30,12 @@ const UserMenu = () => {
   const { chainId, isWrongNetwork } = useActiveChainId()
   const { logout } = useAuth()
   const { hasPendingTransactions, pendingNumber } = usePendingTransactions()
-  // const { isInitialized, isLoading, profile } = useProfile()
+  const { isInitialized, isLoading, profile } = useProfile()
   const [onPresentWalletModal] = useModal(<WalletModal initialView={WalletView.WALLET_INFO} />)
   const [onPresentTransactionModal] = useModal(<WalletModal initialView={WalletView.TRANSACTIONS} />)
   const [onPresentWrongNetworkModal] = useModal(<WalletModal initialView={WalletView.WRONG_NETWORK} />)
-  // const hasProfile = isInitialized && !!profile
-  // const avatarSrc = profile?.nft?.image?.thumbnail
+  const hasProfile = isInitialized && !!profile
+  const avatarSrc = profile?.nft?.image?.thumbnail
   const [userMenuText, setUserMenuText] = useState<string>('')
   const [userMenuVariable, setUserMenuVariable] = useState<UserMenuVariant>('default')
 
