@@ -173,7 +173,7 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
 
   const [stakedOnly, setStakedOnly] = useUserFarmStakedOnly(isActive)
   const [boostedOnly, setBoostedOnly] = useState(false)
-
+    // console.log("farmsLP", farmsLP)
   const activeFarms = farmsLP.filter(
     (farm) => farm.pid !== 0 && farm.multiplier !== '0X' && (!poolLength || poolLength > farm.pid),
   )
@@ -203,10 +203,14 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
 
   const farmsList = useCallback(
     (farmsToDisplay: DeserializedFarm[]): FarmWithStakedValue[] => {
+      // console.log("aaaaa********************_____---------", farmsToDisplay)
       let farmsToDisplayWithAPR: FarmWithStakedValue[] = farmsToDisplay.map((farm) => {
+
         if (!farm.lpTotalInQuoteToken || !farm.quoteTokenPriceBusd) {
+          // console.log("BBBBB", farm)
           return farm
         }
+
         const totalLiquidity = new BigNumber(farm.lpTotalInQuoteToken).times(farm.quoteTokenPriceBusd)
         const { cakeRewardsApr, lpRewardsApr } = isActive
           ? getFarmApr(
@@ -218,7 +222,6 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
               regularCakePerBlock,
             )
           : { cakeRewardsApr: 0, lpRewardsApr: 0 }
-
         return { ...farm, apr: cakeRewardsApr, lpRewardsApr, liquidity: totalLiquidity }
       })
 
@@ -242,7 +245,9 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
 
   const chosenFarms = useMemo(() => {
     let chosenFs = []
+    // console.log("stakedOnlyFarms", activeFarms)
     if (isActive) {
+
       chosenFs = stakedOnly ? farmsList(stakedOnlyFarms) : farmsList(activeFarms)
     }
     if (isInactive) {

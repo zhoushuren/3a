@@ -20,7 +20,7 @@ yarn
 
 start the development server
 ```sh
-yarn dev
+
 ```
 
 build with production mode

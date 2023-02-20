@@ -33,13 +33,12 @@ export async function farmV2FetchFarms({
   totalSpecialAllocPoint,
 }: FetchFarmsParams) {
   const stableFarms = farms.filter(isStableFarm)
-
   const [stableFarmsResults, poolInfos, lpDataResults] = await Promise.all([
     fetchStableFarmData(stableFarms, chainId, multicallv2),
     fetchMasterChefData(farms, isTestnet, multicallv2, masterChefAddress),
     fetchPublicFarmsData(farms, chainId, multicallv2, masterChefAddress),
   ])
-
+  // console.log("aaa")
   const stableFarmsData = (stableFarmsResults as StableLpData[]).map(formatStableFarm)
 
   const stableFarmsDataMap = stableFarms.reduce<Record<number, FormatStableFarmResponse>>((map, farm, index) => {
@@ -53,6 +52,7 @@ export async function farmV2FetchFarms({
 
   const farmsData = farms.map((farm, index) => {
     try {
+
       return {
         ...farm,
         ...(stableFarmsDataMap[farm.pid]
@@ -88,9 +88,9 @@ export async function farmV2FetchFarms({
       throw error
     }
   })
-
+  console.log("farmsData", farmsData, chainId)
   const farmsDataWithPrices = getFarmsPrices(farmsData, chainId)
-
+  console.log("farmsDataWithPrices", farmsDataWithPrices)
   return farmsDataWithPrices
 }
 
@@ -163,7 +163,7 @@ export const fetchMasterChefData = async (
     const masterChefMultiCallResult = await multicallv2({
       abi: masterChefV2Abi,
       calls: masterChefAggregatedCalls,
-      chainId: isTestnet ? ChainId.BSC_TESTNET : ChainId.BSC,
+      chainId: isTestnet ? ChainId.BSC_TESTNET : ChainId.ARB,
     })
 
     let masterChefChunkedResultCounter = 0
@@ -191,6 +191,7 @@ export const fetchMasterChefV2Data = async ({
   masterChefAddress: string
 }) => {
   try {
+    // console.log("fetchMasterChefV2Data", masterChefAddress, isTestnet, ChainId.ARB, multicallv2, masterChefV2Abi)
     const [[poolLength], [totalRegularAllocPoint], [totalSpecialAllocPoint], [cakePerBlock]] = await multicallv2<
       [[BigNumber], [BigNumber], [BigNumber], [BigNumber]]
     >({
@@ -214,9 +215,13 @@ export const fetchMasterChefV2Data = async ({
           params: [true],
         },
       ],
-      chainId: isTestnet ? ChainId.BSC_TESTNET : ChainId.BSC,
+      chainId: ChainId.ARB,
     })
-
+    // console.log("multicallv2 poolLength", poolLength,
+    //     totalRegularAllocPoint,
+    //     totalSpecialAllocPoint,
+    //     cakePerBlock,)
+    // console.log("multicallv2 fetchMasterChefV2Data", masterChefAddress, isTestnet, ChainId.ARB, multicallv2, masterChefV2Abi)
     return {
       poolLength,
       totalRegularAllocPoint,
@@ -224,7 +229,8 @@ export const fetchMasterChefV2Data = async ({
       cakePerBlock,
     }
   } catch (error) {
-    console.error('Get MasterChef data error', error)
+    // console.log("multicallv2 fetchMasterChefV2Data", masterChefAddress, isTestnet, ChainId.ARB, multicallv2, masterChefV2Abi)
+    // console.error('multicallv2 Get MasterChef data error', error)
     throw error
   }
 }
@@ -334,7 +340,7 @@ const getFarmAllocation = ({
   const totalAlloc = isRegular ? totalRegularAllocPoint : totalSpecialAllocPoint
   const poolWeight =
     !totalAlloc.isZero() && !_allocPoint.isZero() ? _allocPoint.divUnsafe(FixedNumber.from(totalAlloc)) : FIXED_ZERO
-
+  // console.log("getFarmAllocation", _allocPoint, _allocPoint.divUnsafe(FixedNumber.from(100)).toString())
   return {
     poolWeight: poolWeight.toString(),
     multiplier: !_allocPoint.isZero() ? `${+_allocPoint.divUnsafe(FixedNumber.from(100)).toString()}X` : `0X`,

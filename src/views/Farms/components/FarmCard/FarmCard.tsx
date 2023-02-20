@@ -82,7 +82,8 @@ const FarmCard: React.FC<React.PropsWithChildren<FarmCardProps>> = ({
   const toggleExpandableSection = useCallback(() => {
     setShowExpandableSection((prev) => !prev)
   }, [])
-
+  // console.log("aaaaaaaaaa", lpLabel, farm.lpSymbol, farm.multiplier)
+  // farm.multiplier = 0
   return (
     <StyledCard isActive={isPromotedFarm}>
       <FarmCardInnerContainer>

@@ -10,6 +10,8 @@ export const multicallAddresses = {
   5: '0xcA11bde05977b3631167028862bE2a173976CA11',
   56: '0xcA11bde05977b3631167028862bE2a173976CA11',
   97: '0xcA11bde05977b3631167028862bE2a173976CA11',
+  // 42161: '0xcA11bde05977b3631167028862bE2a173976CA11',
+  42161: '0xB62C01360681402E0146335B3e7Cd42C40474474',
 }
 
 export const getMulticallContract = (chainId: ChainId, provider) => {
@@ -75,7 +77,7 @@ export function createMulticall<TProvider>(provider: ({ chainId }: { chainId?: n
     return res as any
   }
 
-  const multicallv2: MultiCallV2 = async ({ abi, calls, chainId = ChainId.BSC, options, provider: _provider }) => {
+  const multicallv2: MultiCallV2 = async ({ abi, calls, chainId = ChainId.ARB, options, provider: _provider }) => {
     const { requireSuccess = true, ...overrides } = options || {}
     const multi = getMulticallContract(chainId, _provider || provider({ chainId }))
     if (!multi) throw new Error(`Multicall Provider missing for ${chainId}`)
@@ -85,8 +87,9 @@ export function createMulticall<TProvider>(provider: ({ chainId }: { chainId?: n
       target: call.address.toLowerCase(),
       callData: itf.encodeFunctionData(call.name, call.params),
     }))
-
+    console.log("multicallv2 calldata", calldata, chainId)
     const returnData = await multi.callStatic.tryAggregate(requireSuccess, calldata, overrides)
+    console.log("multicallv2 returnData", returnData)
     const res = returnData.map((call, i) => {
       const [result, data] = call
       return result ? itf.decodeFunctionResult(calls[i].name, data) : null

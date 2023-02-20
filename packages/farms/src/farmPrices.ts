@@ -155,7 +155,7 @@ export const getFarmsPrices = (farms: FarmData[], chainId: number): FarmWithPric
   }
 
   const nativeStableFarm = farms.find((farm) => equalsIgnoreCase(farm.lpAddress, nativeStableLpMap[chainId].address))
-
+  // console.log("nativeStableFarm", nativeStableFarm)
   const nativePriceUSD =
     _toNumber(nativeStableFarm?.tokenPriceVsQuote) !== 0
       ? FIXED_ONE.divUnsafe(FixedNumber.from(nativeStableFarm.tokenPriceVsQuote))
@@ -198,6 +198,7 @@ export const getFarmsPrices = (farms: FarmData[], chainId: number): FarmWithPric
           FixedNumber.from(farm.tokenAmountTotal),
           tokenPriceBusd,
         )
+    // console.log("getFarmsPrices")
     return {
       ...farm,
       tokenPriceBusd: tokenPriceBusd.toString(),
@@ -224,5 +225,10 @@ const nativeStableLpMap = {
     address: '0x4E96D2e92680Ca65D58A0e2eB5bd1c0f44cAB897',
     wNative: 'WBNB',
     stable: 'BUSD',
+  },
+  [ChainId.ARB]: {
+    address: '0x77F0A5cE27eb9Bd3b262ff8b6f55Af497324c77A',
+    wNative: 'WETH',
+    stable: 'USDT',
   },
 }

@@ -4,6 +4,7 @@ import { Address } from 'config/constants/types'
 import { VaultKey } from 'state/types'
 
 export const getAddress = (address: Address, chainId?: number): string => {
+  // console.log("address", address[chainId], address)
   return address[chainId] ? address[chainId] : address[ChainId.BSC]
 }
 

@@ -1,4 +1,4 @@
-import { bscTestnetTokens } from '@pancakeswap/tokens'
+import {arbTokens, bscTestnetTokens} from '@pancakeswap/tokens'
 import { SerializedFarmConfig } from '@pancakeswap/farms'
 
 const farms: SerializedFarmConfig[] = [
@@ -11,6 +11,13 @@ const farms: SerializedFarmConfig[] = [
     lpAddress: '0x36e3E4fF6471559b19F66bD10985534d5e214D44',
     token: bscTestnetTokens.syrup,
     quoteToken: bscTestnetTokens.wbnb,
+  },
+  {
+    pid: 1,
+    lpSymbol: 'Test-CAKE LP',
+    lpAddress: '0x890F3f055Ad1fd3Caa59c961a3666C64d101F594',
+    token: arbTokens.test,
+    quoteToken: arbTokens.cake,
   },
   {
     pid: 3,

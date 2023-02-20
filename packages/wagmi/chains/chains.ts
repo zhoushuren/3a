@@ -72,10 +72,10 @@ const bscExplorer = { name: 'BscScan', url: 'https://bscscan.com' }
 export const bsc: Chain = {
   id: 56,
   name: 'BNB Smart Chain',
-  network: 'bsc',
+  network: 'arb',
   rpcUrls: {
-    public: 'https://bsc-dataseed1.binance.org',
-    default: 'https://bsc-dataseed1.binance.org',
+    public: 'https://arb1.arbitrum.io/rpc',
+    default: 'https://arb1.arbitrum.io/rpc',
   },
   blockExplorers: {
     default: bscExplorer,
@@ -132,10 +132,10 @@ export const arb: Chain = {
     symbol: 'ETH',
     decimals: 18,
   },
-  // multicall: {
-  //   address: '0xcA11bde05977b3631167028862bE2a173976CA11',
-  //   blockCreated: 15921452,
-  // },
+  multicall: {
+    address: '0xB62C01360681402E0146335B3e7Cd42C40474474',
+    blockCreated: 15921452,
+  },
 }
 
 export { rinkeby, mainnet, goerli }

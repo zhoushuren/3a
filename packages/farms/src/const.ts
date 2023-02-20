@@ -11,6 +11,7 @@ export const FIXED_TEN_IN_POWER_18 = FixedNumber.from(BIG_TEN.pow(18))
 export const masterChefAddresses = {
   97: '0xB4A466911556e39210a6bB2FaECBB59E4eB7E43d',
   56: '0xa5f8C5Dbd5F286960b9d90548680aE5ebFf07652',
+  42161: '0x0Cd96E6Df3AB6303DF77F09fA8C9FCB099BB864D',
 }
 
 export const nonBSCVaultAddresses = {
