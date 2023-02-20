@@ -87,9 +87,9 @@ export function createMulticall<TProvider>(provider: ({ chainId }: { chainId?: n
       target: call.address.toLowerCase(),
       callData: itf.encodeFunctionData(call.name, call.params),
     }))
-    console.log("multicallv2 calldata", calldata, chainId)
+    // console.log("multicallv2 calldata", calldata, chainId)
     const returnData = await multi.callStatic.tryAggregate(requireSuccess, calldata, overrides)
-    console.log("multicallv2 returnData", returnData)
+    // console.log("multicallv2 returnData", returnData)
     const res = returnData.map((call, i) => {
       const [result, data] = call
       return result ? itf.decodeFunctionResult(calls[i].name, data) : null

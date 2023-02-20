@@ -9,10 +9,12 @@ const FIXED_ZERO = FixedNumber.from(0)
 const FIXED_100 = FixedNumber.from(100)
 
 export const getFarmCakeRewardApr = (farm: FarmWithPrices, cakePriceBusd: FixedNumber, regularCakePerBlock: number) => {
+  // console.log("getFarmCakeRewardApr")
   let cakeRewardsAprAsString = '0'
   if (!cakePriceBusd) {
     return cakeRewardsAprAsString
   }
+
   const totalLiquidity = FixedNumber.from(farm.lpTotalInQuoteToken).mulUnsafe(
     FixedNumber.from(farm.quoteTokenPriceBusd),
   )

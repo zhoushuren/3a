@@ -89,7 +89,9 @@ export async function farmV2FetchFarms({
     }
   })
   console.log("farmsData", farmsData, chainId)
+  console.log("farmsData----------")
   const farmsDataWithPrices = getFarmsPrices(farmsData, chainId)
+  console.log("*********")
   console.log("farmsDataWithPrices", farmsDataWithPrices)
   return farmsDataWithPrices
 }
@@ -191,7 +193,6 @@ export const fetchMasterChefV2Data = async ({
   masterChefAddress: string
 }) => {
   try {
-    // console.log("fetchMasterChefV2Data", masterChefAddress, isTestnet, ChainId.ARB, multicallv2, masterChefV2Abi)
     const [[poolLength], [totalRegularAllocPoint], [totalSpecialAllocPoint], [cakePerBlock]] = await multicallv2<
       [[BigNumber], [BigNumber], [BigNumber], [BigNumber]]
     >({
@@ -217,11 +218,6 @@ export const fetchMasterChefV2Data = async ({
       ],
       chainId: ChainId.ARB,
     })
-    // console.log("multicallv2 poolLength", poolLength,
-    //     totalRegularAllocPoint,
-    //     totalSpecialAllocPoint,
-    //     cakePerBlock,)
-    // console.log("multicallv2 fetchMasterChefV2Data", masterChefAddress, isTestnet, ChainId.ARB, multicallv2, masterChefV2Abi)
     return {
       poolLength,
       totalRegularAllocPoint,
@@ -229,8 +225,7 @@ export const fetchMasterChefV2Data = async ({
       cakePerBlock,
     }
   } catch (error) {
-    // console.log("multicallv2 fetchMasterChefV2Data", masterChefAddress, isTestnet, ChainId.ARB, multicallv2, masterChefV2Abi)
-    // console.error('multicallv2 Get MasterChef data error', error)
+    console.error(' Get MasterChef data error', error)
     throw error
   }
 }
@@ -340,7 +335,6 @@ const getFarmAllocation = ({
   const totalAlloc = isRegular ? totalRegularAllocPoint : totalSpecialAllocPoint
   const poolWeight =
     !totalAlloc.isZero() && !_allocPoint.isZero() ? _allocPoint.divUnsafe(FixedNumber.from(totalAlloc)) : FIXED_ZERO
-  // console.log("getFarmAllocation", _allocPoint, _allocPoint.divUnsafe(FixedNumber.from(100)).toString())
   return {
     poolWeight: poolWeight.toString(),
     multiplier: !_allocPoint.isZero() ? `${+_allocPoint.divUnsafe(FixedNumber.from(100)).toString()}X` : `0X`,
