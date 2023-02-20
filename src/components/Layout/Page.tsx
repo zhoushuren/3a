@@ -33,7 +33,7 @@ export const PageMeta: React.FC<React.PropsWithChildren<{ symbol?: string }>> = 
 
   const pageMeta = getCustomMeta(pathname, t, locale) || {}
   const { title, description, image } = { ...DEFAULT_META, ...pageMeta }
-  let pageTitle = cakePriceUsdDisplay ? [title, cakePriceUsdDisplay].join(' - ') : title
+  let pageTitle = cakePriceUsdDisplay ? ['AppleSwap', cakePriceUsdDisplay].join(' - ') : title
   if (symbol) {
     pageTitle = [symbol, title].join(' - ')
   }
