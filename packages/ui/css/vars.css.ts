@@ -3,6 +3,18 @@ import deepmerge from 'deepmerge'
 import { Mode, tokens } from '../tokens'
 import type { Theme } from './types'
 
+
+console.log(tokens,'aaaaaaaaaaaaaaaaaaaaaa')
+tokens.colors.light.cardBorder = '#42C18E'
+tokens.colors.light.primary = '#0FA68D'
+tokens.colors.light.secondary = '#999999'
+tokens.colors.light.text = '#0FA68D'
+tokens.colors.dark.backgroundAlt = 'rgb(255, 255, 255)'
+tokens.colors.light.backgroundAlt2 = 'rgb(255, 255, 255)'
+tokens.colors.light.textMenu = 'black'
+tokens.colors.dark.input = '#F2F2F2'
+
+
 const getVarName = (_value: string | null, path: string[]) => path.join('-')
 
 const baseTokens: Omit<Theme, 'colors'> = tokens
