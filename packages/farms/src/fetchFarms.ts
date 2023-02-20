@@ -89,7 +89,9 @@ export async function farmV2FetchFarms({
     }
   })
   console.log("farmsData", farmsData, chainId)
+  console.log("farmsData----------")
   const farmsDataWithPrices = getFarmsPrices(farmsData, chainId)
+  console.log("*********")
   console.log("farmsDataWithPrices", farmsDataWithPrices)
   return farmsDataWithPrices
 }
@@ -340,7 +342,6 @@ const getFarmAllocation = ({
   const totalAlloc = isRegular ? totalRegularAllocPoint : totalSpecialAllocPoint
   const poolWeight =
     !totalAlloc.isZero() && !_allocPoint.isZero() ? _allocPoint.divUnsafe(FixedNumber.from(totalAlloc)) : FIXED_ZERO
-  // console.log("getFarmAllocation", _allocPoint, _allocPoint.divUnsafe(FixedNumber.from(100)).toString())
   return {
     poolWeight: poolWeight.toString(),
     multiplier: !_allocPoint.isZero() ? `${+_allocPoint.divUnsafe(FixedNumber.from(100)).toString()}X` : `0X`,

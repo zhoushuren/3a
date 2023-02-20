@@ -150,17 +150,19 @@ export type FarmWithPrices = FarmData & {
 }
 
 export const getFarmsPrices = (farms: FarmData[], chainId: number): FarmWithPrices[] => {
+  // console.log("farmsData----------getFarmsPrices", nativeStableLpMap[chainId], !nativeStableLpMap[chainId])
   if (!nativeStableLpMap[chainId]) {
     throw new Error(`chainId ${chainId} not supported`)
   }
 
   const nativeStableFarm = farms.find((farm) => equalsIgnoreCase(farm.lpAddress, nativeStableLpMap[chainId].address))
+  // console.log("nativeStableFarm", farms, nativeStableLpMap[chainId].address)
   // console.log("nativeStableFarm", nativeStableFarm)
   const nativePriceUSD =
     _toNumber(nativeStableFarm?.tokenPriceVsQuote) !== 0
       ? FIXED_ONE.divUnsafe(FixedNumber.from(nativeStableFarm.tokenPriceVsQuote))
       : FIXED_ZERO
-
+  // console.log("nativePriceUSD", nativePriceUSD)
   const farmsWithPrices = farms.map((farm) => {
     const quoteTokenFarm = getFarmFromTokenAddress(farms, farm.quoteToken.address, [
       nativeStableLpMap[chainId].wNative,

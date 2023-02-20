@@ -19,7 +19,7 @@ const farms: SerializedFarmConfig[] = [
         token: arbTokens.test,
         quoteToken: arbTokens.cake,
         v1pid: 1,
-        // multiplier: 1
+        // multiplier: "10X"
         // isCommunity: true,
     },
     {
@@ -28,11 +28,22 @@ const farms: SerializedFarmConfig[] = [
         lpAddress: '0xFCd19e5FcBe76197B9867AB8928449e92C10f929',
         token: arbTokens.test,
         quoteToken: arbTokens.usdt,
-
+        // multiplier: "10X",
+        // boosted: true,
         // multiplier: 1
         // isCommunity: true,
     },
-
+    {
+        pid: 3,
+        lpSymbol: 'WETH-USDT LP',
+        lpAddress: '0x77F0A5cE27eb9Bd3b262ff8b6f55Af497324c77A',
+        token: arbTokens.usdt,
+        quoteToken: arbTokens.weth,
+        // multiplier: "10X",
+        // boosted: true,
+        // multiplier: 1
+        // isCommunity: true,
+    },
     // {
     //     pid: 3,
     //     lpSymbol: 'BUSD-CAKE LP',
