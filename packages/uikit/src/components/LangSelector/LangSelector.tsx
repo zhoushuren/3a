@@ -31,7 +31,7 @@ const LangSelector: React.FC<React.PropsWithChildren<Props>> = ({
   <Dropdown
     position={dropdownPosition}
     target={
-      <Button scale={buttonScale} variant="text" startIcon={<LanguageIcon color={color} width="24px" />}>
+      <Button scale={buttonScale} variant="text" startIcon={<LanguageIcon color='white' width="24px" />}>
         {!hideLanguage && <Text color={color}>{currentLang?.toUpperCase()}</Text>}
       </Button>
     }
