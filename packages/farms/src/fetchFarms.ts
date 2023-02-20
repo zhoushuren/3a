@@ -193,7 +193,6 @@ export const fetchMasterChefV2Data = async ({
   masterChefAddress: string
 }) => {
   try {
-    // console.log("fetchMasterChefV2Data", masterChefAddress, isTestnet, ChainId.ARB, multicallv2, masterChefV2Abi)
     const [[poolLength], [totalRegularAllocPoint], [totalSpecialAllocPoint], [cakePerBlock]] = await multicallv2<
       [[BigNumber], [BigNumber], [BigNumber], [BigNumber]]
     >({
@@ -219,11 +218,6 @@ export const fetchMasterChefV2Data = async ({
       ],
       chainId: ChainId.ARB,
     })
-    // console.log("multicallv2 poolLength", poolLength,
-    //     totalRegularAllocPoint,
-    //     totalSpecialAllocPoint,
-    //     cakePerBlock,)
-    // console.log("multicallv2 fetchMasterChefV2Data", masterChefAddress, isTestnet, ChainId.ARB, multicallv2, masterChefV2Abi)
     return {
       poolLength,
       totalRegularAllocPoint,
@@ -231,8 +225,7 @@ export const fetchMasterChefV2Data = async ({
       cakePerBlock,
     }
   } catch (error) {
-    // console.log("multicallv2 fetchMasterChefV2Data", masterChefAddress, isTestnet, ChainId.ARB, multicallv2, masterChefV2Abi)
-    // console.error('multicallv2 Get MasterChef data error', error)
+    console.error(' Get MasterChef data error', error)
     throw error
   }
 }

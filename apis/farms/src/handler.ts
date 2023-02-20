@@ -90,7 +90,7 @@ export async function saveFarms(chainId: number, event: ScheduledEvent | FetchEv
 
     const cakeBusdPrice = await getCakePrice(isTestnet)
     const lpAprs = await handleLpAprs(chainId, farmsConfig)
-
+    // console.log("getFarmCakeRewardApr")
     const finalFarm = farmsWithPrice.map((f) => {
       return {
         ...f,
