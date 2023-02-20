@@ -14,6 +14,7 @@ tokens.colors.dark.backgroundAlt = 'rgb(255, 255, 255)'
 tokens.colors.light.backgroundAlt2 = 'rgb(255, 255, 255)'
 tokens.colors.light.textMenu = 'black'
 tokens.colors.dark.input = '#F2F2F2'
+tokens.colors.light.gradientBubblegum = 'linear-gradient(-426deg, #42c18e -79%, rgb(45 114 210 / -7%) 81%);'
 
 
 const getVarName = (_value: string | null, path: string[]) => path.join('-')
