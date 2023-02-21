@@ -53,6 +53,13 @@ export const USDC_GOERLI = new Token(
   'tUSDC',
   'test USD Coin',
 )
+export const USDC_ARB = new Token(
+    ChainId.ARB,
+    '0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8',
+    6,
+    'USDC',
+    'USD Coin',
+)
 
 export const USDT_BSC = new Token(
   ChainId.BSC,
@@ -124,6 +131,30 @@ export const BUSD_GOERLI = new Token(
   'Binance USD',
   'https://www.paxos.com/busd/',
 )
+export const WETH_ARB = new Token(
+    ChainId.ARB,
+    '0x82aF49447D8a07e3bd95BD0d56f35241523fBab1',
+    18,
+    'WETH',
+    'WETH',
+    '',
+)
+export const WBTC_ARB = new Token(
+    ChainId.ARB,
+    '0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f',
+    18,
+    'WBTC',
+    'WBTC',
+    '',
+)
+export const USDT_ARB = new Token(
+    ChainId.ARB,
+    '0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f',
+    18,
+    'USDT',
+    'USDT',
+    '',
+)
 
 export const BUSD: Record<ChainId, Token> = {
   [ChainId.ETHEREUM]: BUSD_ETH,
@@ -146,9 +177,19 @@ export const USDC = {
   [ChainId.ETHEREUM]: USDC_ETH,
   [ChainId.RINKEBY]: USDC_RINKEBY,
   [ChainId.GOERLI]: USDC_GOERLI,
+  [ChainId.ARB]: USDC_ARB,
 }
 
 export const USDT = {
   [ChainId.BSC]: USDT_BSC,
   [ChainId.ETHEREUM]: USDT_ETH,
+  [ChainId.ARB]: USDT_ARB,
+}
+
+export const WETH = {
+  [ChainId.ARB]: WETH_ARB,
+}
+
+export const WBTC = {
+  [ChainId.ARB]: WBTC_ARB,
 }

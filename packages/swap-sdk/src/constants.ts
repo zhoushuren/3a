@@ -154,7 +154,7 @@ export const NATIVE: Record<
   }
 > = {
   [ChainId.ETHEREUM]: { name: 'Ether', symbol: 'ETH', decimals: 18 },
-  [ChainId.ARB]: { name: 'Ether', symbol: 'ETH', decimals: 18 },
+  [ChainId.ARB]: { name: 'Ether', symbol: 'WETH', decimals: 18 },
   [ChainId.RINKEBY]: { name: 'Rinkeby Ether', symbol: 'RIN', decimals: 18 },
   [ChainId.GOERLI]: { name: 'Goerli Ether', symbol: 'GOR', decimals: 18 },
   [ChainId.BSC]: {

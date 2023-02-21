@@ -41,6 +41,7 @@ export class Native extends NativeCurrency {
   }
 
   public equals(other: Currency): boolean {
+    // console.log("other", other)
     return other.isNative && other.chainId === this.chainId
   }
 }
