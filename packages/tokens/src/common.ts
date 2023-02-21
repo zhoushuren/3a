@@ -2,9 +2,9 @@ import { ChainId, Token } from '@pancakeswap/sdk'
 
 export const CAKE_MAINNET = new Token(
   ChainId.ARB,
-  '0xF1245dE151E71742e6F309c4205BE149D86a13dE',
+  '0xB3D943D13D30bde4Bb4F3b01A4067E8EB1285098',
   18,
-  'CAKE',
+  'Apple',
   'AppleSwap Token',
   'https://pancakeswap.finance/',
 )
@@ -155,6 +155,7 @@ export const USDT_ARB = new Token(
     'USDT',
     '',
 )
+
 
 export const BUSD: Record<ChainId, Token> = {
   [ChainId.ETHEREUM]: BUSD_ETH,

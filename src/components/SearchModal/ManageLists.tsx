@@ -301,9 +301,9 @@ function ManageLists({
       )}
       <ListContainer>
         <AutoColumn gap="md">
-          {sortedLists.map((listUrl) => (
-            <ListRow key={listUrl} listUrl={listUrl} />
-          ))}
+          {/*{sortedLists.map((listUrl) => (*/}
+          {/*  <ListRow key={listUrl} listUrl={listUrl} />*/}
+          {/*))}*/}
         </AutoColumn>
       </ListContainer>
     </Wrapper>

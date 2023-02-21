@@ -1,4 +1,5 @@
 import {ChainId, Token, WETH9} from '@pancakeswap/sdk'
+import {CAKE} from "./common";
 
 export const arbTokens = {
     weth: WETH9[ChainId.ARB],
@@ -18,12 +19,12 @@ export const arbTokens = {
         'Test Token',
         'https://bdollar.fi/',
     ),
-    cake: new Token(
+    apple: new Token(
         ChainId.ARB,
-        '0xF1245dE151E71742e6F309c4205BE149D86a13dE',
+        '0xB3D943D13D30bde4Bb4F3b01A4067E8EB1285098',
         18,
-        'Cake',
-        'Cake Token',
+        'APPLE',
+        'APPLE Token',
         'https://bdollar.fi/',
     ),
     usdt: new Token(

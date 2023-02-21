@@ -1,6 +1,6 @@
 import { ChainId, JSBI, Percent, Token, WNATIVE, WBNB } from '@pancakeswap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
-import {bscTokens, bscTestnetTokens, USDC, USDT, BUSD, WETH, WBTC} from '@pancakeswap/tokens'
+import {bscTokens, bscTestnetTokens, USDC, USDT, BUSD, WETH, WBTC, CAKE} from '@pancakeswap/tokens'
 import { ChainMap, ChainTokenList } from './types'
 
 export const ROUTER_ADDRESS: ChainMap<string> = {
@@ -63,7 +63,7 @@ export const SUGGESTED_BASES: ChainTokenList = {
   [ChainId.GOERLI]: [USDC[ChainId.GOERLI], WNATIVE[ChainId.GOERLI], BUSD[ChainId.GOERLI]],
   [ChainId.BSC]: [bscTokens.busd, bscTokens.cake, bscTokens.btcb],
   [ChainId.BSC_TESTNET]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
-  [ChainId.ARB]: [ WETH[ChainId.ARB],USDT[ChainId.ARB], USDC[ChainId.ARB], WBTC[ChainId.ARB]],
+  [ChainId.ARB]: [CAKE[ChainId.ARB], WETH[ChainId.ARB],USDT[ChainId.ARB], USDC[ChainId.ARB], WBTC[ChainId.ARB]],
 }
 
 // used to construct the list of all pairs we consider by default in the frontend
@@ -76,6 +76,7 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
     WBNB[ChainId.ETHEREUM],
   ],
   [ChainId.ARB]: [
+    CAKE[ChainId.ARB],
     USDC[ChainId.ARB],
     USDT[ChainId.ARB],
     WETH[ChainId.ARB],
@@ -130,7 +131,7 @@ export const INPUT_FRACTION_AFTER_FEE = ONE_HUNDRED_PERCENT.subtract(BASE_FEE)
 // BNB
 export const DEFAULT_INPUT_CURRENCY = 'APPLE'
 // CAKE
-export const DEFAULT_OUTPUT_CURRENCY = '0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9'
+export const DEFAULT_OUTPUT_CURRENCY = '0xB3D943D13D30bde4Bb4F3b01A4067E8EB1285098'
 
 // Handler string is passed to Gelato to use PCS router
 export const GELATO_HANDLER = 'appleswap'
