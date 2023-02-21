@@ -57,11 +57,9 @@ const useAuth = () => {
   const logout = useCallback(async () => {
     try {
       await disconnectAsync()
-      // console.log(chain?.id)
     } catch (error) {
       console.error(error)
     } finally {
-      console.log(chain?.id)
       clearUserStates(dispatch, { chainId: chain?.id, isDeactive: true })
     }
   }, [disconnectAsync, dispatch, chain?.id])

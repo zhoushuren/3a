@@ -7,6 +7,7 @@ import useAuth from 'hooks/useAuth'
 import useNativeCurrency from 'hooks/useNativeCurrency'
 import { useGetCakeBalance } from 'hooks/useTokenBalance'
 import { ChainLogo } from 'components/Logo/ChainLogo'
+// import { CurrencyLogo } from 'components/Logo/CurrencyLogo'
 
 import { getBlockExploreLink, getBlockExploreName } from 'utils'
 import { formatBigNumber } from 'utils/formatBalance'
@@ -57,7 +58,7 @@ const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowNativeBalance, onDismiss 
       )}
       <Flex alignItems="center" justifyContent="space-between">
         <Flex>
-          {!isBSC && <ChainLogo chainId={native.chainId} />}
+         <ChainLogo chainId={1} />
           <Text ml={isBSC ? 0 : '8px'} color="textSubtle">
             {native.symbol} {t('Balance')}
           </Text>
@@ -66,9 +67,9 @@ const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowNativeBalance, onDismiss 
       </Flex>
       <Flex alignItems="center" justifyContent="space-between" mb="24px" mt="12px">
         <Flex alignItems="center">
-          {!isBSC && <ChainLogo chainId={56} />}
+          {!isBSC && <ChainLogo  chainId={1} />}
           <Text ml={isBSC ? 0 : '8px'} color="textSubtle">
-            {t('CAKE Balance')}
+            {t('APPLE Balance')}
           </Text>
         </Flex>
         {cakeFetchStatus !== FetchStatus.Fetched ? (

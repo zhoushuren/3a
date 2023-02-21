@@ -67,7 +67,6 @@ function ConnectModal<T>({ login, onDismiss = () => null, displayCount = 3, t, w
       ? sortedConfig.filter((wallet) => wallet.title !== "WalletConnect")
       : sortedConfig;
   const displayListConfig = showMore ? walletsToShow : walletsToShow.slice(0, displayCount);
-  console.log("displayListConfig", displayListConfig)
   return (
     <ModalContainer $minWidth="320px">
       <ModalHeader background={getThemeValue(theme, "colors.gradientBubblegum")}>
