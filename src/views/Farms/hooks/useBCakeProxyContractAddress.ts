@@ -10,6 +10,7 @@ export const useBCakeProxyContractAddress = (account?: string, chainId?: number)
   const { data, status, mutate } = useSWR(account && isSupportedChain && ['proxyAddress', account], async () =>
     bCakeFarmBoosterContract.proxyContract(account),
   )
+  console.log("useBCakeProxyContractAddress", data)
   const isLoading = isSupportedChain ? status !== FetchStatus.Fetched : false
 
   return {

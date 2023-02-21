@@ -153,7 +153,7 @@ const StakeAction: React.FC<React.PropsWithChildren<FarmCardActionsProps>> = ({
       </IconButtonWrapper>
     )
   }
-    console.log("isApproved", isApproved)
+    // console.log("isApproved", isApproved)
   // TODO: Move this out to prevent unnecessary re-rendered
   if (!isApproved) {
     return (

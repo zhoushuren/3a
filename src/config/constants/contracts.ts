@@ -178,7 +178,7 @@ export default {
     // 56: '0xE4FAa3Ef5A9708C894435B0F39c2B440936A3A52',
     56: '',
     97: '',
-    42161: ''
+    42161: '0xc17276023278212A148944142B6FF3906aDdf7a1'
   },
   bCakeFarmBoosterProxyFactory: {
     56: '0x2C36221bF724c60E9FEE3dd44e2da8017a8EF3BA',
