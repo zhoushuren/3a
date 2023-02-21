@@ -8,6 +8,9 @@ export const SubMenuItemWrapper = styled(Flex)<{ $isMobileOnly: boolean }>`
   width: 100%;
   overflow: hidden;
   position: relative;
+  a{
+    color:black;
+  }
 `;
 const StyledSubMenuItems = styled(Flex)`
   position: relative;

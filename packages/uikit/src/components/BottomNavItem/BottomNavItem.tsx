@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext,useCallback } from "react";
 import { MenuContext } from "../../widgets/Menu/context";
 import { Flex } from "../Box";
 import AnimatedIconComponent from "../Svg/AnimatedIconComponent";
@@ -15,6 +15,7 @@ const BottomNavItem: React.FC<React.PropsWithChildren<BottomNavItemProps>> = ({
   disabled = false,
   ...props
 }) => {
+
   const { linkComponent } = useContext(MenuContext);
   const bottomNavItemContent = (
     <Flex flexDirection="column" justifyContent="center" alignItems="center" height="100%">
