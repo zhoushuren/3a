@@ -175,7 +175,8 @@ export default {
     97: '',
   },
   bCakeFarmBooster: {
-    56: '0xE4FAa3Ef5A9708C894435B0F39c2B440936A3A52',
+    // 56: '0xE4FAa3Ef5A9708C894435B0F39c2B440936A3A52',
+    56: '',
     97: '',
     42161: ''
   },

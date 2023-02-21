@@ -14,6 +14,7 @@ const ProxyFarmCardContainer = ({ farm }) => {
   const cakePrice = usePriceCakeBusd()
 
   const { proxyFarm, shouldUseProxyFarm } = useContext(YieldBoosterStateContext)
+  // console.log("shouldUseProxyFarm", shouldUseProxyFarm, farm)
   const finalFarm = shouldUseProxyFarm ? proxyFarm : farm
 
   return (
@@ -31,6 +32,7 @@ const ProxyFarmCardContainer = ({ farm }) => {
 const FarmsPage = () => {
   const { account } = useWeb3React()
   const { chosenFarmsMemoized } = useContext(FarmsContext)
+  // console.log("chosenFarmsMemoized", chosenFarmsMemoized)
   const cakePrice = usePriceCakeBusd()
   return (
     <>

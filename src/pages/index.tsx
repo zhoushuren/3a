@@ -9,7 +9,7 @@ import { SWRConfig } from 'swr'
 // import { getBlocksFromTimestamps } from 'utils/getBlocksFromTimestamps'
 // import { formatEther } from '@ethersproject/units'
 import Home from '../views/Home'
-import Swap from '../views/Swap'
+// import Swap from '../views/Swap'
 
 const IndexPage = ({ totalTx30Days, addressCount30Days, tvl }) => {
   return (
@@ -22,7 +22,7 @@ const IndexPage = ({ totalTx30Days, addressCount30Days, tvl }) => {
         },
       }}
     >
-      <Swap />
+        <Home />
     </SWRConfig>
   )
 }

@@ -1,11 +1,11 @@
 import { ChainId, Token } from '@pancakeswap/sdk'
 
 export const CAKE_MAINNET = new Token(
-  ChainId.BSC,
-  '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
+  ChainId.ARB,
+  '0xF1245dE151E71742e6F309c4205BE149D86a13dE',
   18,
   'CAKE',
-  'PancakeSwap Token',
+  'AppleSwap Token',
   'https://pancakeswap.finance/',
 )
 
@@ -135,6 +135,7 @@ export const BUSD: Record<ChainId, Token> = {
 }
 
 export const CAKE = {
+  [ChainId.ARB]: CAKE_MAINNET,
   [ChainId.BSC]: CAKE_MAINNET,
   [ChainId.BSC_TESTNET]: CAKE_TESTNET,
 }

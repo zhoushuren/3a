@@ -19,7 +19,7 @@ export function useNetworkConnectorUpdater() {
   useEffect(() => {
     if (loading || !router.isReady || isConnecting) return
     const parsedQueryChainId = Number(router.query.chainId)
-    if (!parsedQueryChainId && chainId === ChainId.BSC) return
+    if (!parsedQueryChainId && chainId === ChainId.ARB) return
     if (parsedQueryChainId !== chainId && isChainSupported(chainId)) {
       const uriHash = getHashFromRouter(router)?.[0]
       router.replace(

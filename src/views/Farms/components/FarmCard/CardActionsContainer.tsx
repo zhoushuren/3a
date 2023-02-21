@@ -44,7 +44,7 @@ const CardActions: React.FC<React.PropsWithChildren<FarmCardActionsProps>> = ({
   const { shouldUseProxyFarm } = useContext(YieldBoosterStateContext)
   const isReady = farm.multiplier !== undefined
   const { stakedBalance, tokenBalance, proxy } = farm.userData
-
+  // console.log("farm", farm)
   return (
     <Action>
       <Flex>
