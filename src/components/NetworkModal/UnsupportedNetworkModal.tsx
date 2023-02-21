@@ -16,7 +16,7 @@ import Dots from '../Loader/Dots'
 export function UnsupportedNetworkModal() {
   const { switchNetworkAsync, isLoading, canSwitch } = useSwitchNetwork()
   const { chains } = useNetwork()
-  const chainId = useLocalNetworkChain() || ChainId.BSC
+  const chainId = useLocalNetworkChain() || ChainId.ARB
   const { isConnected } = useAccount()
   const { logout } = useAuth()
   const { t } = useTranslation()
@@ -37,7 +37,7 @@ export function UnsupportedNetworkModal() {
       <Grid style={{ gap: '16px' }} maxWidth="336px">
         <Text>
           {t('Currently %feature% only supported in', { feature: typeof title === 'string' ? title : 'this page' })}{' '}
-          {supportedMainnetChains?.map((c) => c.name).join(', ')}
+          Arbitrum
         </Text>
         <div style={{ textAlign: 'center' }}>
           <Image
@@ -55,11 +55,12 @@ export function UnsupportedNetworkModal() {
           <Button
             isLoading={isLoading}
             onClick={() => {
-              if (supportedMainnetChains.map((c) => c.id).includes(chainId)) {
-                switchNetworkAsync(chainId)
-              } else {
-                switchNetworkAsync(supportedMainnetChains[0].id)
-              }
+              // if (supportedMainnetChains.map((c) => c.id).includes(chainId)) {
+              //   switchNetworkAsync(chainId)
+              // } else {
+              //   switchNetworkAsync(supportedMainnetChains[2].id)
+              // }
+              switchNetworkAsync(chainId)
             }}
           >
             {isLoading ? <Dots>{t('Switch network in wallet')}</Dots> : t('Switch network in wallet')}
