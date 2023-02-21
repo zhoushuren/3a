@@ -12,16 +12,16 @@ const farms: SerializedFarmConfig[] = [
     //     token: bscTestnetTokens.syrup,
     //     quoteToken: bscTestnetTokens.wbnb,
     // },
-    {
-        pid: 1,
-        lpSymbol: 'Test-CAKE LP',
-        lpAddress: '0x890F3f055Ad1fd3Caa59c961a3666C64d101F594',
-        token: arbTokens.test,
-        quoteToken: arbTokens.cake,
-        v1pid: 1,
-        // multiplier: "10X"
-        // isCommunity: true,
-    },
+    // {
+    //     pid: 1,
+    //     lpSymbol: 'Test-CAKE LP',
+    //     lpAddress: '0x890F3f055Ad1fd3Caa59c961a3666C64d101F594',
+    //     token: arbTokens.test,
+    //     quoteToken: arbTokens.cake,
+    //     v1pid: 1,
+    //     // multiplier: "10X"
+    //     // isCommunity: true,
+    // },
     {
         pid: 2,
         lpSymbol: 'Test-USDT LP',

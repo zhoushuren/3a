@@ -14,26 +14,22 @@ export const useProfileForAddress = (
     revalidateOnFocus: false,
     revalidateOnReconnect: false,
   },
-): {
-  profile?: Profile
-  isFetching: boolean
-  isValidating: boolean
-  refresh: KeyedMutator<GetProfileResponse>
-} => {
-  const { data, status, mutate, isValidating } = useSWR(
-    address ? [address, 'profile'] : null,
-    () => getProfile(address),
-    fetchConfiguration,
-  )
+) => {
+  // const { data, status, mutate, isValidating } = useSWR(
+  //   address ? [address, 'profile'] : null,
+  //   () => getProfile(address),
+  //   fetchConfiguration,
+  // )
 
-  const { profile } = data ?? { profile: null }
-
-  return {
-    profile,
-    isFetching: status === FetchStatus.Fetching,
-    isValidating,
-    refresh: mutate,
-  }
+  // const { profile } = data ?? { profile: null }
+  const profile = null
+  // return {
+  //   profile,
+  //   isFetching: status === FetchStatus.Fetching,
+  //   isValidating,
+  //   refresh: mutate,
+  // }
+  return {}
 }
 
 export const useAchievementsForAddress = (address: string) => {
@@ -48,25 +44,19 @@ export const useAchievementsForAddress = (address: string) => {
   }
 }
 
-export const useProfile = (): {
-  profile?: Profile
-  hasProfile: boolean
-  hasActiveProfile: boolean
-  isInitialized: boolean
-  isLoading: boolean
-  refresh: KeyedMutator<GetProfileResponse>
-} => {
-  const { account } = useWeb3React()
-  const { data, status, mutate } = useSWRImmutable(account ? [account, 'profile'] : null, () => getProfile(account), {
-    use: [localStorageMiddleware],
-  })
-
-  const { profile, hasRegistered } = data ?? ({ profile: null, hasRegistered: false } as GetProfileResponse)
-
-  const isLoading = status === FetchStatus.Fetching
-  const isInitialized = status === FetchStatus.Fetched || status === FetchStatus.Failed
-  const hasProfile = isInitialized && hasRegistered
-  const hasActiveProfile = hasProfile && profile?.isActive
-
-  return { profile, hasProfile, hasActiveProfile, isInitialized, isLoading, refresh: mutate }
+export const useProfile = () => {
+  // const { account } = useWeb3React()
+  // const { data, status, mutate } = useSWRImmutable(account ? [account, 'profile'] : null, () => getProfile(account), {
+  //   use: [localStorageMiddleware],
+  // })
+  //
+  // const { profile, hasRegistered } = data ?? ({ profile: null, hasRegistered: false } as GetProfileResponse)
+  //
+  // const isLoading = status === FetchStatus.Fetching
+  // const isInitialized = status === FetchStatus.Fetched || status === FetchStatus.Failed
+  // const hasProfile = isInitialized && hasRegistered
+  // const hasActiveProfile = hasProfile && profile?.isActive
+  //
+  // return { profile, hasProfile, hasActiveProfile, isInitialized, isLoading, refresh: mutate }
+  return {}
 }

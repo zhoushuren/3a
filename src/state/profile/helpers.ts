@@ -54,10 +54,12 @@ export const getProfile = async (address: string): Promise<GetProfileResponse> =
       calls: profileCalls,
       options: { requireSuccess: false },
     })
-    const [[hasRegistered], profileResponse] = profileCallsResult
-    if (!hasRegistered) {
-      return { hasRegistered, profile: null }
-    }
+    // console.log("profileCallsResult", profileCallsResult)
+    const [ profileResponse] = profileCallsResult
+    // if (!hasRegistered) {
+    //   return { hasRegistered, profile: null }
+    // }
+    const hasRegistered = false
 
     const { userId, points, teamId, tokenId, collectionAddress, isActive } = transformProfileResponse(profileResponse)
     const [team, username, nftRes] = await Promise.all([
