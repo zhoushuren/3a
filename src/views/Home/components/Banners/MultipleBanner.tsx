@@ -97,9 +97,9 @@ const MultipleBanner: React.FC<React.PropsWithChildren> = () => {
   useIsomorphicEffect(() => {
     if (swiperRef) {
       if (bannerList.length > 1 && !swiperRef.autoplay?.running) {
-        swiperRef.autoplay?.start()
+        // swiperRef.autoplay?.start()
       } else if (bannerList.length <= 1 && swiperRef.autoplay?.running) {
-        swiperRef.autoplay?.stop()
+        // swiperRef.autoplay?.stop()
       }
     }
   }, [bannerList, swiperRef])
