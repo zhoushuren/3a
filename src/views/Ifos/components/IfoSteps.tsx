@@ -62,6 +62,8 @@ const InlineLink = styled(Link)`
   display: inline;
 `
 
+
+
 const Step1 = ({ hasProfile }: { hasProfile: boolean }) => {
   const { t } = useTranslation()
   const credit = useIfoCredit()
@@ -250,7 +252,7 @@ const IfoSteps: React.FC<React.PropsWithChildren<TypeProps>> = ({
       <Heading id="ifo-how-to" as="h2" scale="xl" color="secondary" mb="24px" textAlign="center">
         {t('How to Take Part in the Public Sale')}
       </Heading>
-      <Stepper>
+      <Stepper >
         {stepsValidationStatus.map((_, index) => (
           <Step
             // eslint-disable-next-line react/no-array-index-key

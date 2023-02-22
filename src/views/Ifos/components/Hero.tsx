@@ -5,10 +5,11 @@ import { useTranslation } from '@pancakeswap/localization'
 import { useRouter } from 'next/router'
 
 const StyledHero = styled(Box)`
-  background-image: url('/images/ifos/assets/ifo-banner-${({ theme }) => (theme.isDark ? 'dark' : 'light')}.png');
-  background-position: top, center;
-  background-repeat: no-repeat;
-  background-size: auto 100%;
+  // background-image: url('/images/ifos/assets/ifo-banner-${({ theme }) => (theme.isDark ? 'dark' : 'light')}.png');
+  // background-position: top, center;
+  // background-repeat: no-repeat;
+  // background-size: auto 100%;
+  position:relative;
 `
 
 const StyledHeading = styled(Heading)`
@@ -34,11 +35,12 @@ const StyledButton = styled(Button)`
 
 const DesktopButton = styled(Button)`
   align-self: flex-end;
+  background: ${({ theme }) => theme.colors.primary};
 `
 
 const StyledSubTitle = styled(Text)`
   font-size: 16px;
-
+  color: ${({ theme }) => theme.colors.textSubtle};
   ${({ theme }) => theme.mediaQueries.md} {
     font-size: 20px;
   }
@@ -61,7 +63,8 @@ const Hero = () => {
   return (
     <Box mb="8px">
       <StyledHero py={['16px', '16px', '32px']} minHeight={['212px', '212px', '197px']}>
-        <Container>
+        <div style={{position:'absolute',textAlign:'center',height:'100%',width:'100%'}}><img style={{height:'100%',opacity: '0.5'}} src="/images/ifos/assets/ifo-banner-light.png" alt="" /></div>
+        <Container style={{position:'relative',zIndex:'1'}}>
           <Flex
             justifyContent="space-between"
             flexDirection={['column', 'column', 'column', 'row']}

@@ -28,7 +28,7 @@ const BigCurve = styled(Box)<{ $status: PublicIfoData['status'] }>`
         `
       case 'finished':
         return `
-          background: ${theme.colors.input};
+          background: white;
         `
       default:
         return ''
@@ -83,7 +83,7 @@ const IfoRibbonEnd = () => {
     <>
       <BigCurve $status="finished" />
       <Box position="relative">
-        <Heading as="h3" scale="lg" color="textSubtle">
+        <Heading as="h3" scale="lg" style={{color:'#999999'}} color="textSubtle">
           {t('Sale Finished!')}
         </Heading>
       </Box>
