@@ -8,7 +8,7 @@ export const cakeBnbLpToken = new Token(ChainId.BSC, CAKE_BNB_LP_MAINNET, 18, 'C
 const ifos: Ifo[] = [
   {
     id: 'apple',
-    address: '0x3ff90B59B43DC44932F0e5cb3FdE5348f659baAA',
+    address: '0x1f00568f11727cd26d6955791bfd438286773e9d',
     isActive: true,
     name: 'APPLE',
     poolUnlimited: {
