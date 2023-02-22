@@ -15,15 +15,15 @@ const bnbPools = poolsConfig.filter((pool) => pool.stakingToken.symbol === 'ETH'
 const nonMasterPools = poolsConfig.filter((pool) => pool.sousId !== 0)
 
 export const fetchPoolsAllowance = async (account) => {
-  console.log("allowances")
+
   const calls = nonBnbPools.map((pool) => ({
     address: pool.stakingToken.address,
     name: 'allowance',
     params: [account, getAddress(pool.contractAddress)],
   }))
-  console.log("allowances")
+
   const allowances = await multicall(erc20ABI, calls)
-  console.log("allowances", allowances)
+
   return fromPairs(nonBnbPools.map((pool, index) => [pool.sousId, new BigNumber(allowances[index]).toJSON()]))
 }
 

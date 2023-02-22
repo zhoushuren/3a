@@ -4,7 +4,7 @@ import { Mode, tokens } from '../tokens'
 import type { Theme } from './types'
 
 
-console.log(tokens,'aaaaaaaaaaaaaaaaaaaaaa')
+// console.log(tokens,'aaaaaaaaaaaaaaaaaaaaaa')
 tokens.colors.light.cardBorder = '#42C18E'
 tokens.colors.light.primary = '#0FA68D'
 tokens.colors.light.secondary = '#999999'

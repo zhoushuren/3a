@@ -15,7 +15,7 @@ const BottomNav: React.FC<React.PropsWithChildren<BottomNavProps>> = ({
 }) => {
   const [menuOpenByIndex, setMenuOpenByIndex] = useState({});
   const isBottomMenuOpen = Object.values(menuOpenByIndex).some((acc) => acc);
-  console.log("isBottomMenuOpen", isBottomMenuOpen, menuOpenByIndex, items)
+  // console.log("isBottomMenuOpen", isBottomMenuOpen, menuOpenByIndex, items)
   return (
     <>
       {isBottomMenuOpen && <Overlay />}
@@ -26,7 +26,7 @@ const BottomNav: React.FC<React.PropsWithChildren<BottomNavProps>> = ({
             index
           ) => {
             const statusColor = menuItems?.find((menuItem) => menuItem.status !== undefined)?.status?.color;
-            console.log(activeSubItem, href, activeItem)
+            // console.log(activeSubItem, href, activeItem)
             return (
               showOnMobile && (
                 <DropdownMenu

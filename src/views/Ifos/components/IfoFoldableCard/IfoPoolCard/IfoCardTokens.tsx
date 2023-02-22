@@ -90,7 +90,7 @@ interface IfoCardTokensProps {
   ifo: Ifo
   publicIfoData: PublicIfoData
   walletIfoData: WalletIfoData
-  hasProfile: boolean
+  // hasProfile: boolean
   isLoading: boolean
   onApprove: () => Promise<any>
   enableStatus: EnableStatus
@@ -120,7 +120,7 @@ const IfoCardTokens: React.FC<React.PropsWithChildren<IfoCardTokensProps>> = ({
   ifo,
   publicIfoData,
   walletIfoData,
-  hasProfile,
+  // hasProfile,
   isLoading,
   onApprove,
   enableStatus,
@@ -139,6 +139,7 @@ const IfoCardTokens: React.FC<React.PropsWithChildren<IfoCardTokensProps>> = ({
 
   const { currency, token, version } = ifo
   const { hasClaimed } = userPoolCharacteristics
+  // console.log("poolId", poolId, ifo[poolId])
   const distributionRatio = ifo[poolId].distributionRatio * 100
   const credit = useIfoCredit()
 
@@ -152,7 +153,7 @@ const IfoCardTokens: React.FC<React.PropsWithChildren<IfoCardTokensProps>> = ({
 
     let message
 
-    if (account && !hasProfile) {
+    if (account) {
       message = (
         <Message my="24px" p="8px" variant="warning">
           <Box>
@@ -210,7 +211,7 @@ const IfoCardTokens: React.FC<React.PropsWithChildren<IfoCardTokensProps>> = ({
       )
     }
 
-    if (account && !hasProfile) {
+    if (account) {
       return (
         <>
           <OnSaleInfo token={token} distributionRatio={distributionRatio} saleAmount={ifo[poolId].saleAmount} />

@@ -49,7 +49,7 @@ const StakeButton: React.FC<React.PropsWithChildren<StackedActionProps>> = ({
   const { onUnstake } = useUnstakeFarms(pid)
   const lpPrice = useLpTokenPrice(lpSymbol)
   const cakePrice = usePriceCakeBusd()
-  console.log("allowance", allowance)
+  // console.log("allowance", allowance)
   const isApproved = account && allowance && allowance.isGreaterThan(0)
 
   const liquidityUrlPathParts = getLiquidityUrlPathParts({

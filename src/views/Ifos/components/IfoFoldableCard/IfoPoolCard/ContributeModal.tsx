@@ -31,6 +31,7 @@ import styled from 'styled-components'
 import { formatNumber, getBalanceAmount } from 'utils/formatBalance'
 import { requiresApproval } from 'utils/requiresApproval'
 import { PublicIfoData, WalletIfoData } from 'views/Ifos/types'
+import {BIG_TEN} from "../../../../../utils/bigNumber";
 
 const MessageTextLink = styled(Link)`
   display: inline;
@@ -98,7 +99,8 @@ const ContributeModal: React.FC<React.PropsWithChildren<Props>> = ({
   const raisingTokenContractReader = useERC20(currency.address, false)
   const raisingTokenContractApprover = useERC20(currency.address)
   const { t } = useTranslation()
-  const valueWithTokenDecimals = new BigNumber(value).times(DEFAULT_TOKEN_DECIMAL)
+  // const valueWithTokenDecimals = new BigNumber(value).times(DEFAULT_TOKEN_DECIMAL)
+  const valueWithTokenDecimals = new BigNumber(value).times(BIG_TEN.pow(6))
   const label = currency === bscTokens.cake ? t('Max. CAKE entry') : t('Max. token entry')
 
   const { isApproving, isApproved, isConfirmed, isConfirming, handleApprove, handleConfirm } =
@@ -137,9 +139,13 @@ const ContributeModal: React.FC<React.PropsWithChildren<Props>> = ({
 
   // in v3 max token entry is based on ifo credit and hard cap limit per user minus amount already committed
   const maximumTokenEntry = useMemo(() => {
+    //
+
     if (!creditLeft || (ifo.version >= 3.1 && poolId === PoolIds.poolBasic)) {
       return limitPerUserInLP.minus(amountTokenCommittedInLP)
     }
+    // console.log("limitPerUserInLP", creditLeft, limitPerUserInLP, amountTokenCommittedInLP, ifo.version, poolId)
+    return limitPerUserInLP
     if (limitPerUserInLP.isGreaterThan(0)) {
       if (limitPerUserInLP.isGreaterThan(0)) {
         return limitPerUserInLP.minus(amountTokenCommittedInLP).isLessThanOrEqualTo(creditLeft)
@@ -147,6 +153,7 @@ const ContributeModal: React.FC<React.PropsWithChildren<Props>> = ({
           : creditLeft
       }
     }
+    // console.log("limitPerUserInLP", limitPerUserInLP)
     return creditLeft
   }, [creditLeft, limitPerUserInLP, amountTokenCommittedInLP, ifo.version, poolId])
 
@@ -178,7 +185,7 @@ const ContributeModal: React.FC<React.PropsWithChildren<Props>> = ({
 
   const isWarning =
     valueWithTokenDecimals.isGreaterThan(userCurrencyBalance) || valueWithTokenDecimals.isGreaterThan(maximumTokenEntry)
-
+  // console.log("maximumTokenCommittable", maximumTokenCommittable, userCurrencyBalance, getBalanceAmount(maximumTokenCommittable, 6).toString())
   return (
     <Modal title={t('Contribute %symbol%', { symbol: currency.symbol })} onDismiss={onDismiss}>
       <ModalBody maxWidth="360px">
@@ -214,7 +221,7 @@ const ContributeModal: React.FC<React.PropsWithChildren<Props>> = ({
             onBlur={() => {
               if (isWarning) {
                 // auto adjust to max value
-                setValue(getBalanceAmount(maximumTokenCommittable).toString())
+                setValue(getBalanceAmount(maximumTokenCommittable, currency.decimals).toString())
               }
             }}
             mb="8px"
@@ -242,7 +249,7 @@ const ContributeModal: React.FC<React.PropsWithChildren<Props>> = ({
                 key={multiplierValue}
                 scale="xs"
                 variant="tertiary"
-                onClick={() => setValue(getBalanceAmount(maximumTokenCommittable.times(multiplierValue)).toString())}
+                onClick={() => setValue(getBalanceAmount(maximumTokenCommittable.times(multiplierValue),  currency.decimals).toString())}
                 mr={index < multiplierValues.length - 1 ? '8px' : 0}
               >
                 {multiplierValue * 100}%

@@ -3,7 +3,7 @@ import { useState, useCallback } from 'react'
 import { BSC_BLOCK_TIME } from 'config'
 import ifoV2Abi from 'config/abi/ifoV2.json'
 import ifoV3Abi from 'config/abi/ifoV3.json'
-import { bscTokens } from '@pancakeswap/tokens'
+import {arbTokens, bscTokens} from '@pancakeswap/tokens'
 import { Ifo, IfoStatus } from 'config/constants/types'
 
 import { useLpTokenPrice, usePriceCakeBusd } from 'state/farms/hooks'
@@ -41,8 +41,8 @@ const useGetPublicIfoData = (ifo: Ifo): PublicIfoData => {
   const { address, releaseBlockNumber, version } = ifo
   const cakePriceUsd = usePriceCakeBusd()
   const lpTokenPriceInUsd = useLpTokenPrice(ifo.currency.symbol)
-  const currencyPriceInUSD = ifo.currency === bscTokens.cake ? cakePriceUsd : lpTokenPriceInUsd
-
+  const currencyPriceInUSD = ifo.currency === arbTokens.usdt ?  new BigNumber(1) : lpTokenPriceInUsd // 写死了USDT
+  // console.log("currencyPriceInUSD", currencyPriceInUSD, cakePriceUsd)
   const [state, setState] = useState({
     isInitialized: false,
     status: 'idle' as IfoStatus,
@@ -171,6 +171,7 @@ const useGetPublicIfoData = (ifo: Ifo): PublicIfoData => {
       const taxRateNum = taxRate ? new BigNumber(taxRate[0]._hex).div(TAX_PRECISION).toNumber() : 0
 
       const status = getStatus(currentBlock, startBlockNum, endBlockNum)
+      // console.log("status", status, currentBlock, startBlockNum, endBlockNum)
       const totalBlocks = endBlockNum - startBlockNum
       const blocksRemaining = endBlockNum - currentBlock
 

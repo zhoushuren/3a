@@ -149,8 +149,8 @@ export const WBTC_ARB = new Token(
 )
 export const USDT_ARB = new Token(
     ChainId.ARB,
-    '0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f',
-    18,
+    '0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9',
+    6,
     'USDT',
     'USDT',
     '',

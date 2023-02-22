@@ -2,7 +2,7 @@ import { useState, useCallback } from 'react'
 import { useWeb3React } from '@pancakeswap/wagmi'
 import BigNumber from 'bignumber.js'
 import { Ifo, PoolIds } from 'config/constants/types'
-import { useERC20, useIfoV3Contract } from 'hooks/useContract'
+import {useERC20, useIfoV2Contract, useIfoV3Contract} from 'hooks/useContract'
 import { multicallv2 } from 'utils/multicall'
 import ifoV3Abi from 'config/abi/ifoV3.json'
 import { fetchCakeVaultUserData } from 'state/pools'
@@ -53,7 +53,8 @@ const useGetWalletIfoData = (ifo: Ifo): WalletIfoData => {
   const { address, currency, version } = ifo
 
   const { account } = useWeb3React()
-  const contract = useIfoV3Contract(address)
+  // const contract = useIfoV3Contract(address)
+  const contract = useIfoV2Contract(address)
   const currencyContract = useERC20(currency.address, false)
   const allowance = useIfoAllowance(currencyContract, address)
 
