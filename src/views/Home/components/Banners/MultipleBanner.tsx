@@ -26,7 +26,7 @@ const BannerPlaceHolder = styled.div<{ walletConnected: boolean }>`
     left: 0px;
     right: 0px;
     bottom: 0px;
-    background: -webkit-linear-gradient(#7645d9 0%, #452a7a 100%);
+    background:  linear-gradient(93.64deg, #6ACC76 17.34%, #4885BD 61.52%, #2FA1F3 94.69%);
     ${({ theme }) => theme.mediaQueries.sm} {
       top: 20px;
       left: 20px;
@@ -97,9 +97,9 @@ const MultipleBanner: React.FC<React.PropsWithChildren> = () => {
   useIsomorphicEffect(() => {
     if (swiperRef) {
       if (bannerList.length > 1 && !swiperRef.autoplay?.running) {
-        swiperRef.autoplay?.start()
+        // swiperRef.autoplay?.start()
       } else if (bannerList.length <= 1 && swiperRef.autoplay?.running) {
-        swiperRef.autoplay?.stop()
+        // swiperRef.autoplay?.stop()
       }
     }
   }, [bannerList, swiperRef])

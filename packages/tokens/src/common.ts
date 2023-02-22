@@ -1,11 +1,11 @@
 import { ChainId, Token } from '@pancakeswap/sdk'
 
 export const CAKE_MAINNET = new Token(
-  ChainId.BSC,
-  '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
+  ChainId.ARB,
+  '0xB3D943D13D30bde4Bb4F3b01A4067E8EB1285098',
   18,
-  'CAKE',
-  'PancakeSwap Token',
+  'Apple',
+  'AppleSwap Token',
   'https://pancakeswap.finance/',
 )
 
@@ -52,6 +52,13 @@ export const USDC_GOERLI = new Token(
   6,
   'tUSDC',
   'test USD Coin',
+)
+export const USDC_ARB = new Token(
+    ChainId.ARB,
+    '0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8',
+    6,
+    'USDC',
+    'USD Coin',
 )
 
 export const USDT_BSC = new Token(
@@ -124,6 +131,31 @@ export const BUSD_GOERLI = new Token(
   'Binance USD',
   'https://www.paxos.com/busd/',
 )
+export const WETH_ARB = new Token(
+    ChainId.ARB,
+    '0x82aF49447D8a07e3bd95BD0d56f35241523fBab1',
+    18,
+    'WETH',
+    'WETH',
+    '',
+)
+export const WBTC_ARB = new Token(
+    ChainId.ARB,
+    '0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f',
+    18,
+    'WBTC',
+    'WBTC',
+    '',
+)
+export const USDT_ARB = new Token(
+    ChainId.ARB,
+    '0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9',
+    6,
+    'USDT',
+    'USDT',
+    '',
+)
+
 
 export const BUSD: Record<ChainId, Token> = {
   [ChainId.ETHEREUM]: BUSD_ETH,
@@ -135,6 +167,7 @@ export const BUSD: Record<ChainId, Token> = {
 }
 
 export const CAKE = {
+  [ChainId.ARB]: CAKE_MAINNET,
   [ChainId.BSC]: CAKE_MAINNET,
   [ChainId.BSC_TESTNET]: CAKE_TESTNET,
 }
@@ -145,9 +178,19 @@ export const USDC = {
   [ChainId.ETHEREUM]: USDC_ETH,
   [ChainId.RINKEBY]: USDC_RINKEBY,
   [ChainId.GOERLI]: USDC_GOERLI,
+  [ChainId.ARB]: USDC_ARB,
 }
 
 export const USDT = {
   [ChainId.BSC]: USDT_BSC,
   [ChainId.ETHEREUM]: USDT_ETH,
+  [ChainId.ARB]: USDT_ARB,
+}
+
+export const WETH = {
+  [ChainId.ARB]: WETH_ARB,
+}
+
+export const WBTC = {
+  [ChainId.ARB]: WBTC_ARB,
 }

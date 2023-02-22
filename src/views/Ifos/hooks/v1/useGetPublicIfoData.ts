@@ -15,6 +15,7 @@ import { getStatus } from '../helpers'
 const useGetPublicIfoData = (ifo: Ifo): PublicIfoData => {
   const { address, releaseBlockNumber } = ifo
   const lpTokenPriceInUsd = useLpTokenPrice(ifo.currency.symbol)
+    // console.log("lpTokenPriceInUsd", lpTokenPriceInUsd)
   const [state, setState] = useState({
     isInitialized: false,
     status: 'idle' as IfoStatus,

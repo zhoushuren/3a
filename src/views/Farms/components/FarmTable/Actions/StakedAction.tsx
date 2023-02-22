@@ -82,7 +82,7 @@ export const ProxyStakedContainer = ({ children, ...props }) => {
   const lpContract = useERC20(lpAddress)
 
   const { onStake, onUnstake, onApprove, onDone } = useProxyStakedActions(props.pid, lpContract)
-
+  // console.log( props.userData)
   const { allowance } = props.userData || {}
 
   const isApproved = account && allowance && allowance.isGreaterThan(0)

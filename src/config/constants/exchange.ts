@@ -1,6 +1,6 @@
 import { ChainId, JSBI, Percent, Token, WNATIVE, WBNB } from '@pancakeswap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
-import { bscTokens, bscTestnetTokens, USDC, USDT, BUSD } from '@pancakeswap/tokens'
+import {bscTokens, bscTestnetTokens, USDC, USDT, BUSD, WETH, WBTC, CAKE} from '@pancakeswap/tokens'
 import { ChainMap, ChainTokenList } from './types'
 
 export const ROUTER_ADDRESS: ChainMap<string> = {
@@ -33,7 +33,7 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     bscTokens.usdc,
   ],
   [ChainId.BSC_TESTNET]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
-  // [ChainId.ARB]: [],
+  [ChainId.ARB]: [WNATIVE[ChainId.ARB]],
 }
 
 /**
@@ -63,7 +63,7 @@ export const SUGGESTED_BASES: ChainTokenList = {
   [ChainId.GOERLI]: [USDC[ChainId.GOERLI], WNATIVE[ChainId.GOERLI], BUSD[ChainId.GOERLI]],
   [ChainId.BSC]: [bscTokens.busd, bscTokens.cake, bscTokens.btcb],
   [ChainId.BSC_TESTNET]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
-  [ChainId.ARB]: [USDC[ChainId.ETHEREUM], WBNB[ChainId.ETHEREUM], BUSD[ChainId.ETHEREUM], USDT[ChainId.ETHEREUM]],
+  [ChainId.ARB]: [CAKE[ChainId.ARB], WETH[ChainId.ARB],USDT[ChainId.ARB], USDC[ChainId.ARB], WBTC[ChainId.ARB]],
 }
 
 // used to construct the list of all pairs we consider by default in the frontend
@@ -76,8 +76,11 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
     WBNB[ChainId.ETHEREUM],
   ],
   [ChainId.ARB]: [
-    // USDC[ChainId.ARB],
-    // USDT[ChainId.ARB],
+    CAKE[ChainId.ARB],
+    USDC[ChainId.ARB],
+    USDT[ChainId.ARB],
+    WETH[ChainId.ARB],
+    WBTC[ChainId.ARB],
   ],
   [ChainId.RINKEBY]: [USDC[ChainId.RINKEBY], WNATIVE[ChainId.RINKEBY], BUSD[ChainId.RINKEBY]],
   [ChainId.GOERLI]: [USDC[ChainId.GOERLI], WNATIVE[ChainId.GOERLI], BUSD[ChainId.GOERLI]],
@@ -126,12 +129,12 @@ export const BASE_FEE = new Percent(JSBI.BigInt(25), BIPS_BASE)
 export const INPUT_FRACTION_AFTER_FEE = ONE_HUNDRED_PERCENT.subtract(BASE_FEE)
 
 // BNB
-export const DEFAULT_INPUT_CURRENCY = 'BNB'
+export const DEFAULT_INPUT_CURRENCY = 'APPLE'
 // CAKE
-export const DEFAULT_OUTPUT_CURRENCY = '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82'
+export const DEFAULT_OUTPUT_CURRENCY = '0xB3D943D13D30bde4Bb4F3b01A4067E8EB1285098'
 
 // Handler string is passed to Gelato to use PCS router
-export const GELATO_HANDLER = 'pancakeswap'
+export const GELATO_HANDLER = 'appleswap'
 export const GENERIC_GAS_LIMIT_ORDER_EXECUTION = BigNumber.from(500000)
 
 export const LIMIT_ORDERS_DOCS_URL = 'https://docs.pancakeswap.finance/products/pancakeswap-exchange/limit-orders'

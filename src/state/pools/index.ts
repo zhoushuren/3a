@@ -248,6 +248,7 @@ export const fetchPoolsUserDataAsync = createAsyncThunk<
   string
 >('pool/fetchPoolsUserData', async (account, { rejectWithValue }) => {
   try {
+    console.log("fetchPoolsUserDataAsync")
     const [allowances, stakingTokenBalances, stakedBalances, pendingRewards] = await Promise.all([
       fetchPoolsAllowance(account),
       fetchUserBalances(account),

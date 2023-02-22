@@ -46,7 +46,7 @@ export const getUsername = async (address: string): Promise<string> => {
 
 export const getProfile = async (address: string): Promise<GetProfileResponse> => {
   try {
-    const profileCalls = ['hasRegistered', 'getUserProfile'].map((method) => {
+    const profileCalls = [].map((method) => {
       return { address: getPancakeProfileAddress(), name: method, params: [address] }
     })
     const profileCallsResult = await multicallv2({
@@ -54,10 +54,12 @@ export const getProfile = async (address: string): Promise<GetProfileResponse> =
       calls: profileCalls,
       options: { requireSuccess: false },
     })
-    const [[hasRegistered], profileResponse] = profileCallsResult
-    if (!hasRegistered) {
-      return { hasRegistered, profile: null }
-    }
+    // console.log("profileCallsResult", profileCallsResult)
+    const [ profileResponse] = profileCallsResult
+    // if (!hasRegistered) {
+    //   return { hasRegistered, profile: null }
+    // }
+    const hasRegistered = false
 
     const { userId, points, teamId, tokenId, collectionAddress, isActive } = transformProfileResponse(profileResponse)
     const [team, username, nftRes] = await Promise.all([

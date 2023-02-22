@@ -89,8 +89,9 @@ export const usePoolsPageFetch = () => {
   const { account } = useWeb3React()
   const dispatch = useAppDispatch()
   useFetchPublicPoolsData()
-
+  // console.log("useFastRefreshEffect")
   useFastRefreshEffect(() => {
+    // console.log("useFastRefreshEffect")
     batch(() => {
       dispatch(fetchCakeVaultPublicData())
       dispatch(fetchCakeFlexibleSideVaultPublicData())

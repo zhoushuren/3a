@@ -9,6 +9,7 @@ import lotteryMobileImage from './lotteryMobile.png'
 import modWhiteLogo from './mod-white-logo.png'
 import perpetualImage from './perpetual.png'
 import perpetualMobileImage from './perpetualMobile.png'
+import apple from './apple.png'
 
 export {
   lotteryImage,
@@ -22,4 +23,5 @@ export {
   modWhiteLogo,
   perpetualImage,
   perpetualMobileImage,
+  apple
 }

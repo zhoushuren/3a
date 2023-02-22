@@ -160,6 +160,7 @@ const sortPools = (account: string, sortOption: string, pools: DeserializedPool[
 const POOL_START_BLOCK_THRESHOLD = (60 / BSC_BLOCK_TIME) * 4
 
 const Pools: React.FC<React.PropsWithChildren> = () => {
+  // console.log("Pool")
   const router = useRouter()
   const { t } = useTranslation()
   const { account } = useWeb3React()
@@ -209,7 +210,7 @@ const Pools: React.FC<React.PropsWithChildren> = () => {
     })
   }, [openPoolsWithStartBlockFilter])
   const hasStakeInFinishedPools = stakedOnlyFinishedPools.length > 0
-
+  // console.log("Pool")
   usePoolsPageFetch()
 
   useEffect(() => {
@@ -248,7 +249,7 @@ const Pools: React.FC<React.PropsWithChildren> = () => {
     return sortedPools
   }, [account, sortOption, pools, chosenPools, numberOfPoolsVisible, searchQuery])
   chosenPoolsLength.current = chosenPools.length
-
+  // console.log("chosenPools", chosenPools)
   const cardLayout = (
     <CardLayout>
       {chosenPools.map((pool) =>

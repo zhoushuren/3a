@@ -52,11 +52,10 @@ export const usePollFarmsWithUserData = () => {
       refreshInterval: farmFlag === 'api' ? 50 * 1000 : SLOW_INTERVAL,
     },
   )
-
+  // console.log(isProxyContractLoading, proxyCreated)
   const name = proxyCreated
     ? ['farmsWithUserData', account, proxyAddress, chainId]
     : ['farmsWithUserData', account, chainId]
-
   useSWRImmutable(
     account && chainId && !isProxyContractLoading ? name : null,
     async () => {

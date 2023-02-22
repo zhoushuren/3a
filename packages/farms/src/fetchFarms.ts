@@ -88,11 +88,11 @@ export async function farmV2FetchFarms({
       throw error
     }
   })
-  console.log("farmsData", farmsData, chainId)
-  console.log("farmsData----------")
+  // console.log("farmsData", farmsData, chainId)
+  // console.log("farmsData----------")
   const farmsDataWithPrices = getFarmsPrices(farmsData, chainId)
-  console.log("*********")
-  console.log("farmsDataWithPrices", farmsDataWithPrices)
+  // console.log("*********")
+  // console.log("farmsDataWithPrices", farmsDataWithPrices)
   return farmsDataWithPrices
 }
 

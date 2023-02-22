@@ -5,7 +5,8 @@ import { NextLinkFromReactRouter } from 'components/NextLink'
 import { useTranslation } from '@pancakeswap/localization'
 import Image from 'next/image'
 import styled, { keyframes } from 'styled-components'
-import bunnyImage from '../../../../public/images/home/lunar-bunny/bunny@2x.png'
+// import bunnyImage from '../../../../public/images/home/lunar-bunny/bunny@2x.png'
+import appleTreeImage from '../../../../public/images/home/lunar-bunny/start-tree.png'
 import CompositeImage, { CompositeImageProps } from './CompositeImage'
 import { SlideSvgDark, SlideSvgLight } from './SlideSvg'
 
@@ -126,7 +127,7 @@ const Hero = () => {
       >
         <Flex flex="1" flexDirection="column">
           <Heading scale="xxl" color="secondary" mb="24px">
-            {t('The moon is made of pancakes.')}
+              APPLE
           </Heading>
           <Heading scale="md" mb="24px">
             {t('Trade, earn, and win crypto on the most popular decentralized platform in the galaxy.')}
@@ -146,11 +147,8 @@ const Hero = () => {
           position="relative"
         >
           <BunnyWrapper>
-            <Image src={bunnyImage} priority placeholder="blur" alt={t('Lunar bunny')} />
+            <Image src={appleTreeImage} priority placeholder="blur" alt={t('Lunar bunny')} width={306} height={306} />
           </BunnyWrapper>
-          <StarsWrapper>
-            <CompositeImage {...starsImage} />
-          </StarsWrapper>
         </Flex>
       </Flex>
     </>

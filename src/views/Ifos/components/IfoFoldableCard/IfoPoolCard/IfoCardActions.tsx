@@ -15,7 +15,7 @@ interface Props {
   ifo: Ifo
   publicIfoData: PublicIfoData
   walletIfoData: WalletIfoData
-  hasProfile: boolean
+  // hasProfile: boolean
   isLoading: boolean
   isEligible: boolean
   enableStatus: EnableStatus
@@ -26,7 +26,7 @@ const IfoCardActions: React.FC<React.PropsWithChildren<Props>> = ({
   ifo,
   publicIfoData,
   walletIfoData,
-  hasProfile,
+  // hasProfile,
   isLoading,
   isEligible,
   enableStatus,
@@ -43,13 +43,13 @@ const IfoCardActions: React.FC<React.PropsWithChildren<Props>> = ({
     return <ConnectWalletButton width="100%" />
   }
 
-  if (!hasProfile) {
-    return (
-      <Button as={NextLinkFromReactRouter} to={`/profile/${account.toLowerCase()}`} width="100%">
-        {t('Activate your Profile')}
-      </Button>
-    )
-  }
+  // if (!hasProfile) {
+  //   return (
+  //     <Button as={NextLinkFromReactRouter} to={`/profile/${account.toLowerCase()}`} width="100%">
+  //       {t('Activate your Profile')}
+  //     </Button>
+  //   )
+  // }
 
   const needClaim =
     publicIfoData.status === 'finished' &&
@@ -65,9 +65,10 @@ const IfoCardActions: React.FC<React.PropsWithChildren<Props>> = ({
     (enableStatus !== EnableStatus.ENABLED && publicIfoData.status === 'coming_soon') ||
     (ifo.version >= 3.1 && poolId === PoolIds.poolBasic && !isEligible)
   ) {
+    // console.log("publicIfoData1111", publicIfoData)
     return null
   }
-
+  // console.log("publicIfoData", publicIfoData)
   return (
     <>
       {(publicIfoData.status === 'live' || publicIfoData.status === 'coming_soon') && (

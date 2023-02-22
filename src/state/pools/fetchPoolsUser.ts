@@ -10,11 +10,12 @@ import fromPairs from 'lodash/fromPairs'
 
 // Pool 0, Cake / Cake is a different kind of contract (master chef)
 // BNB pools use the native BNB token (wrapping ? unwrapping is done at the contract level)
-const nonBnbPools = poolsConfig.filter((pool) => pool.stakingToken.symbol !== 'BNB')
-const bnbPools = poolsConfig.filter((pool) => pool.stakingToken.symbol === 'BNB')
+const nonBnbPools = poolsConfig.filter((pool) => pool.stakingToken.symbol !== 'ETH')
+const bnbPools = poolsConfig.filter((pool) => pool.stakingToken.symbol === 'ETH')
 const nonMasterPools = poolsConfig.filter((pool) => pool.sousId !== 0)
 
 export const fetchPoolsAllowance = async (account) => {
+
   const calls = nonBnbPools.map((pool) => ({
     address: pool.stakingToken.address,
     name: 'allowance',
@@ -22,6 +23,7 @@ export const fetchPoolsAllowance = async (account) => {
   }))
 
   const allowances = await multicall(erc20ABI, calls)
+
   return fromPairs(nonBnbPools.map((pool, index) => [pool.sousId, new BigNumber(allowances[index]).toJSON()]))
 }
 

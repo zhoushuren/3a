@@ -168,11 +168,13 @@ const IfoSteps: React.FC<React.PropsWithChildren<TypeProps>> = ({
   isLive,
   ifoCurrencyAddress,
 }) => {
-  const { hasActiveProfile } = useProfile()
+  // const { hasActiveProfile } = useProfile()
   const { account } = useWeb3React()
   const { t } = useTranslation()
   const { balance } = useTokenBalance(ifoCurrencyAddress)
-  const stepsValidationStatus = [hasActiveProfile, balance.isGreaterThan(0), isCommitted, hasClaimed]
+  const stepsValidationStatus = [
+      // hasActiveProfile,
+      balance.isGreaterThan(0), isCommitted, hasClaimed]
 
   const getStatusProp = (index: number): StepStatus => {
     const arePreviousValid = index === 0 ? true : every(stepsValidationStatus.slice(0, index), Boolean)
@@ -216,15 +218,15 @@ const IfoSteps: React.FC<React.PropsWithChildren<TypeProps>> = ({
               {t('Activate your Profile')}
             </Heading>
             <Text color="textSubtle" small mb="16px">
-              {t('You’ll need an active PancakeSwap Profile to take part in an IFO!')}
+              {t('You’ll need an active AppleSWap Profile to take part in an IFO!')}
             </Text>
-            {renderAccountStatus()}
+            {/*{renderAccountStatus()}*/}
           </CardBody>
         )
       case 1:
-        return <Step1 hasProfile={hasActiveProfile} />
+        return <Step1  />
       case 2:
-        return <Step2 hasProfile={hasActiveProfile} isLive={isLive} isCommitted={isCommitted} />
+        return <Step2 isLive={isLive} isCommitted={isCommitted} />
       case 3:
         return (
           <CardBody>
@@ -233,7 +235,7 @@ const IfoSteps: React.FC<React.PropsWithChildren<TypeProps>> = ({
             </Heading>
             <Text color="textSubtle" small>
               {t(
-                'After the IFO sales finish, you can claim any IFO tokens that you bought, and any unspent CAKE tokens will be returned to your wallet.',
+                'After the IFO sales finish, you can claim any IFO tokens that you bought, and any unspent APPLE tokens will be returned to your wallet.',
               )}
             </Text>
           </CardBody>

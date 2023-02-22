@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { bscTokens } from '@pancakeswap/tokens'
+import {bscTokens, USDT} from '@pancakeswap/tokens'
 import { Text, Flex, Box, Skeleton, TooltipText, useTooltip } from '@pancakeswap/uikit'
 import { PublicIfoData, WalletIfoData } from 'views/Ifos/types'
 import { useTranslation } from '@pancakeswap/localization'
@@ -9,6 +9,8 @@ import { getBalanceNumber, formatNumber } from 'utils/formatBalance'
 import useBUSDPrice from 'hooks/useBUSDPrice'
 import { multiplyPriceByAmount } from 'utils/prices'
 import { SkeletonCardDetails } from './Skeletons'
+import {Price} from "@pancakeswap/sdk";
+import {chainId} from "wagmi";
 
 export interface IfoCardDetailsProps {
   poolId: PoolIds
@@ -87,8 +89,9 @@ const MaxTokenEntry = ({ maxToken, ifo, poolId }: { maxToken: number; ifo: Ifo; 
 
   const { targetRef, tooltip, tooltipVisible } = useTooltip(tooltipContent, { placement: 'bottom-start' })
   const label = isCurrencyCake ? t('Max. CAKE entry') : t('Max. token entry')
-  const price = useBUSDPrice(ifo.currency)
-
+  const price = useBUSDPrice(ifo.currency) // TODO: 这里写死了USDT
+  // const price = new Price(USDT[chainId], USDT[chainId], '1', '1')
+  //   console.log("ifo.currency", ifo.currency, price)
   const dollarValueOfToken = multiplyPriceByAmount(price, maxToken, ifo.currency.decimals)
 
   return (
@@ -125,6 +128,7 @@ const IfoCardDetails: React.FC<React.PropsWithChildren<IfoCardDetailsProps>> = (
 }) => {
   const { t } = useTranslation()
   const { status, currencyPriceInUSD } = publicIfoData
+    // console.log("publicIfoData", publicIfoData)
   const poolCharacteristic = publicIfoData[poolId]
   const walletCharacteristic = walletIfoData[poolId]
 

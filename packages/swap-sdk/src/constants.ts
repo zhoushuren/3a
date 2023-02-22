@@ -138,11 +138,11 @@ export const WBNB = {
 
 export const WNATIVE: Record<number, Token> = {
   [ChainId.ARB]: WETH9[ChainId.ARB],
-  [ChainId.ETHEREUM]: WETH9[ChainId.ETHEREUM],
-  [ChainId.RINKEBY]: WETH9[ChainId.RINKEBY],
-  [ChainId.GOERLI]: WETH9[ChainId.GOERLI],
-  [ChainId.BSC]: WBNB[ChainId.BSC],
-  [ChainId.BSC_TESTNET]: WBNB[ChainId.BSC_TESTNET],
+  // [ChainId.ETHEREUM]: WETH9[ChainId.ETHEREUM],
+  // [ChainId.RINKEBY]: WETH9[ChainId.RINKEBY],
+  // [ChainId.GOERLI]: WETH9[ChainId.GOERLI],
+  // [ChainId.BSC]: WBNB[ChainId.BSC],
+  // [ChainId.BSC_TESTNET]: WBNB[ChainId.BSC_TESTNET],
 }
 
 export const NATIVE: Record<
@@ -153,18 +153,18 @@ export const NATIVE: Record<
     decimals: number
   }
 > = {
-  [ChainId.ETHEREUM]: { name: 'Ether', symbol: 'ETH', decimals: 18 },
+  // [ChainId.ETHEREUM]: { name: 'Ether', symbol: 'ETH', decimals: 18 },
   [ChainId.ARB]: { name: 'Ether', symbol: 'ETH', decimals: 18 },
-  [ChainId.RINKEBY]: { name: 'Rinkeby Ether', symbol: 'RIN', decimals: 18 },
-  [ChainId.GOERLI]: { name: 'Goerli Ether', symbol: 'GOR', decimals: 18 },
-  [ChainId.BSC]: {
-    name: 'Binance Chain Native Token',
-    symbol: 'BNB',
-    decimals: 18,
-  },
-  [ChainId.BSC_TESTNET]: {
-    name: 'Binance Chain Native Token',
-    symbol: 'tBNB',
-    decimals: 18,
-  },
+  // [ChainId.RINKEBY]: { name: 'Rinkeby Ether', symbol: 'RIN', decimals: 18 },
+  // [ChainId.GOERLI]: { name: 'Goerli Ether', symbol: 'GOR', decimals: 18 },
+  // [ChainId.BSC]: {
+  //   name: 'Binance Chain Native Token',
+  //   symbol: 'BNB',
+  //   decimals: 18,
+  // },
+  // [ChainId.BSC_TESTNET]: {
+  //   name: 'Binance Chain Native Token',
+  //   symbol: 'tBNB',
+  //   decimals: 18,
+  // },
 }

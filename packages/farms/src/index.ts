@@ -6,7 +6,7 @@ import type { FarmWithPrices } from './farmPrices'
 import { farmV2FetchFarms, FetchFarmsParams, fetchMasterChefV2Data } from './fetchFarms'
 
 const supportedChainId = [ChainId.GOERLI, ChainId.BSC, ChainId.BSC_TESTNET, ChainId.ARB,]
-export const bCakeSupportedChainId = [ChainId.BSC, ChainId.BSC_TESTNET,  ChainId.ARB,]
+export const bCakeSupportedChainId = [ChainId.BSC, ChainId.BSC_TESTNET] // 这里不能开， 因为没有开 bCakeFarmBooster合约。
 
 export function createFarmFetcher(multicallv2: MultiCallV2) {
   const fetchFarms = async (

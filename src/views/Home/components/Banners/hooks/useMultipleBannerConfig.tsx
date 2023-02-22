@@ -7,6 +7,7 @@ import PerpetualBanner from '../PerpetualBanner'
 import useIsRenderIfoBanner from './useIsRenderIFOBanner'
 import useIsRenderLotteryBanner from './useIsRenderLotteryBanner'
 import useIsRenderCompetitionBanner from './useIsRenderCompetitionBanner'
+import IODBanner from '../IDOBanner'
 
 interface IBannerConfig {
   shouldRender: boolean
@@ -47,9 +48,13 @@ export const useMultipleBannerConfig = () => {
         shouldRender: isRenderLotteryBanner,
         banner: <LotteryBanner />,
       },
+      // {
+      //   shouldRender: true,
+      //   banner: <PerpetualBanner />,
+      // },
       {
         shouldRender: true,
-        banner: <PerpetualBanner />,
+        banner: <IODBanner />,
       },
     ]
     return [...NO_SHUFFLE_BANNERS, ...shuffle(SHUFFLE_BANNERS)]
