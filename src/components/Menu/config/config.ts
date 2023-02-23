@@ -86,6 +86,22 @@ const config: (
         // },
       ].map((item) => addMenuItemSupported(item, chainId)),
     },
+    {
+      label: t('IFO'),
+      href: '/ifo',
+      icon: MoreIcon,
+      // fillIcon: EarnFillIcon,
+      image: '/images/ifos/ifo-bunny.png',
+      showItemsOnMobile: false,
+      items: [
+            // {
+            //   label: t('IFO'),
+            //   href: '/ifo',
+            //   supportChainIds: SUPPORT_ONLY_BSC,
+            //   image: '/images/ifos/ifo-bunny.png',
+            // },
+      ].map((item) => addMenuItemSupported(item, chainId)),
+    },
     // {
     //   label: t('Win'),
     //   href: '/prediction',

@@ -95,49 +95,49 @@ const Step1 = ({ hasProfile }: { hasProfile: boolean }) => {
         {t('Lock CAKE in the CAKE pool')}
       </Heading>
       <Box>
-        <Text mb="4px" color="textSubtle" small>
-          {t(
-            'The maximum amount of CAKE you can commit to the Public Sale equals the number of your iCAKE. Lock more CAKE for longer durations to increase the maximum CAKE you can commit to the sale.',
-          )}
-        </Text>
-        <TooltipText as="span" fontWeight={700} ref={targetRef} color="textSubtle" small>
-          {t('How does the number of iCAKE calculated?')}
-        </TooltipText>
-        <Text mt="4px" color="textSubtle" small>
-          {t(
-            'Missed this IFO? You will enjoy the same amount of iCAKE for future IFOs if your locked-staking position is not unlocked.',
-          )}
-        </Text>
+        {/*<Text mb="4px" color="textSubtle" small>*/}
+        {/*  {t(*/}
+        {/*    'The maximum amount of CAKE you can commit to the Public Sale equals the number of your iCAKE. Lock more CAKE for longer durations to increase the maximum CAKE you can commit to the sale.',*/}
+        {/*  )}*/}
+        {/*</Text>*/}
+        {/*<TooltipText as="span" fontWeight={700} ref={targetRef} color="textSubtle" small>*/}
+        {/*  {t('How does the number of iCAKE calculated?')}*/}
+        {/*</TooltipText>*/}
+        {/*<Text mt="4px" color="textSubtle" small>*/}
+        {/*  {t(*/}
+        {/*    'Missed this IFO? You will enjoy the same amount of iCAKE for future IFOs if your locked-staking position is not unlocked.',*/}
+        {/*  )}*/}
+        {/*</Text>*/}
       </Box>
-      {hasProfile && (
-        <SmallStakePoolCard borderRadius="default" p="16px">
-          <FlexGap justifyContent="space-between" alignItems="center" flexWrap="wrap" gap="16px">
-            <Flex>
-              <LogoRoundIcon style={{ alignSelf: 'flex-start' }} width={32} height={32} />
-              <Box ml="16px">
-                <Text bold fontSize="12px" textTransform="uppercase" color="secondary">
-                  {t('Your max CAKE entry')}
-                </Text>
-                <Balance fontSize="20px" bold decimals={5} value={getBalanceNumber(credit)} />
-                <Text fontSize="12px" color="textSubtle">
-                  {creditDollarValue !== undefined ? (
-                    <Balance
-                      value={creditDollarValue}
-                      fontSize="12px"
-                      color="textSubtle"
-                      decimals={2}
-                      prefix="~"
-                      unit=" USD"
-                    />
-                  ) : (
-                    <Skeleton mt="1px" height={16} width={64} />
-                  )}
-                </Text>
-              </Box>
-            </Flex>
-          </FlexGap>
-        </SmallStakePoolCard>
-      )}
+      {/*{hasProfile && (*/}
+      {/*  <SmallStakePoolCard borderRadius="default" p="16px">*/}
+      {/*    <FlexGap justifyContent="space-between" alignItems="center" flexWrap="wrap" gap="16px">*/}
+      {/*      <Flex>*/}
+      {/*        <LogoRoundIcon style={{ alignSelf: 'flex-start' }} width={32} height={32} />*/}
+      {/*        <Box ml="16px">*/}
+      {/*          <Text bold fontSize="12px" textTransform="uppercase" color="secondary">*/}
+      {/*            {t('Your max CAKE entry')}*/}
+      {/*          </Text>*/}
+      {/*          <Balance fontSize="20px" bold decimals={5} value={getBalanceNumber(credit)} />*/}
+      {/*          <Text fontSize="12px" color="textSubtle">*/}
+      {/*            {creditDollarValue !== undefined ? (*/}
+      {/*              <Balance*/}
+      {/*                value={creditDollarValue}*/}
+      {/*                fontSize="12px"*/}
+      {/*                color="textSubtle"*/}
+      {/*                decimals={2}*/}
+      {/*                prefix="~"*/}
+      {/*                unit=" USD"*/}
+      {/*              />*/}
+      {/*            ) : (*/}
+      {/*              <Skeleton mt="1px" height={16} width={64} />*/}
+      {/*            )}*/}
+      {/*          </Text>*/}
+      {/*        </Box>*/}
+      {/*      </Flex>*/}
+      {/*    </FlexGap>*/}
+      {/*  </SmallStakePoolCard>*/}
+      {/*)}*/}
     </CardBody>
   )
 }
@@ -220,7 +220,7 @@ const IfoSteps: React.FC<React.PropsWithChildren<TypeProps>> = ({
               {t('Activate your Profile')}
             </Heading>
             <Text color="textSubtle" small mb="16px">
-              {t('You’ll need an active AppleSWap Profile to take part in an IFO!')}
+              {t('You’ll need an active PancakeSwap Profile to take part in an IFO!')}
             </Text>
             {/*{renderAccountStatus()}*/}
           </CardBody>
@@ -228,7 +228,7 @@ const IfoSteps: React.FC<React.PropsWithChildren<TypeProps>> = ({
       case 1:
         return <Step1  />
       case 2:
-        return <Step2 isLive={isLive} isCommitted={isCommitted} />
+        // return <Step2 isLive={isLive} isCommitted={isCommitted} />
       case 3:
         return (
           <CardBody>
@@ -237,7 +237,7 @@ const IfoSteps: React.FC<React.PropsWithChildren<TypeProps>> = ({
             </Heading>
             <Text color="textSubtle" small>
               {t(
-                'After the IFO sales finish, you can claim any IFO tokens that you bought, and any unspent APPLE tokens will be returned to your wallet.',
+                'After the IFO sales finish, you can claim any IFO tokens that you bought, and any unspent CAKE tokens will be returned to your wallet.',
               )}
             </Text>
           </CardBody>
