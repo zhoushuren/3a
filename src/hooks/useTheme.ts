@@ -9,7 +9,7 @@ export const THEME_DOMAIN = '.appleswap.finance'
 const useTheme = () => {
   const { resolvedTheme, setTheme } = useNextTheme()
   const theme = useContext(StyledThemeContext)
-
+  setTheme("light")
   const handleSwitchTheme = (themeValue: 'light') => {
     try {
       setTheme("light")
