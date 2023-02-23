@@ -1,3 +1,4 @@
-import FarmAuction from '../../views/FarmAuction'
-
-export default FarmAuction
+// import FarmAuction from '../../views/FarmAuction'
+//
+// export default FarmAuction
+export default ()=> {<></>}
