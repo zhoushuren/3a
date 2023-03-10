@@ -54,17 +54,17 @@ export const vaultPoolConfig = {
 } as const
 
 export const livePools: SerializedPoolConfig[] = [
-  {
-    sousId: 0,
-    stakingToken: arbTokens.usdc,
-    earningToken: arbTokens.apple,
-    contractAddress: {
-      42161: '0x0Cd96E6Df3AB6303DF77F09fA8C9FCB099BB864D',
-    },
-    poolCategory: PoolCategory.CORE,
-    tokenPerBlock: '10',
-    isFinished: false,
-  },
+  // {
+  //   sousId: 0,
+  //   stakingToken: arbTokens.usdc,
+  //   earningToken: arbTokens.apple,
+  //   contractAddress: {
+  //     42161: '0x0Cd96E6Df3AB6303DF77F09fA8C9FCB099BB864D',
+  //   },
+  //   poolCategory: PoolCategory.CORE,
+  //   tokenPerBlock: '10',
+  //   isFinished: false,
+  // },
   // {
   //   sousId: 0,
   //   stakingToken: arbTokens.cake,

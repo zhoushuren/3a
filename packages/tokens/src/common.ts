@@ -133,7 +133,7 @@ export const BUSD_GOERLI = new Token(
 )
 export const WETH_ARB = new Token(
     ChainId.ARB,
-    '0x82aF49447D8a07e3bd95BD0d56f35241523fBab1',
+    '0x15dc8168aa893ee5abf46778ae99fd7ed9225914',
     18,
     'WETH',
     'WETH',
@@ -141,7 +141,7 @@ export const WETH_ARB = new Token(
 )
 export const WBTC_ARB = new Token(
     ChainId.ARB,
-    '0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f',
+    '0xe4610f0194a82f23c82b07415330fc4ee9282b5b',
     18,
     'WBTC',
     'WBTC',
@@ -149,7 +149,7 @@ export const WBTC_ARB = new Token(
 )
 export const USDT_ARB = new Token(
     ChainId.ARB,
-    '0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9',
+    '0x9ebab27608bd64aff36f027049aecc69102a0d1e',
     6,
     'USDT',
     'USDT',

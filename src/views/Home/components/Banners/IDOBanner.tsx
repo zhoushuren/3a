@@ -64,7 +64,7 @@ const IDOBanner = () => {
         <S.Wrapper>
             <S.Inner>
                 <S.LeftWrapper>
-                    <Header ref={headerRef}>APPLE IDO</Header>
+                    <Header ref={headerRef}>PIPE IDO</Header>
                     <NextLinkFromReactRouter to="/swap">
                         <Button >
                             <Text color="invertedContrast" bold fontSize="16px" mr="4px">

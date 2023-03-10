@@ -5,7 +5,7 @@ export const arbTokens = {
     weth: WETH9[ChainId.ARB],
     usdc: new Token(
         ChainId.ARB,
-        '0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8',
+        '0x3fca6743e2fb55759fee767f3a68b2c06d699dc4\n',
         6,
         'USDC',
         'Binance-Peg USD Coin',
@@ -21,7 +21,7 @@ export const arbTokens = {
     ),
     usdt: new Token(
         ChainId.ARB,
-        '0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9',
+        '0x9ebab27608bd64aff36f027049aecc69102a0d1e\n',
         6,
         'USDT',
         'USDT Token',
