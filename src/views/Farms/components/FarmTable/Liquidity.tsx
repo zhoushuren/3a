@@ -44,10 +44,10 @@ const Liquidity: React.FunctionComponent<React.PropsWithChildren<LiquidityProps>
   return (
     <Container>
       <LiquidityWrapper>
-        <Text>{displayLiquidity}</Text>
+        <Text color="back">{displayLiquidity}</Text>
       </LiquidityWrapper>
       <ReferenceElement ref={targetRef}>
-        <HelpIcon color="textSubtle" />
+        <HelpIcon color="primary" />
       </ReferenceElement>
       {tooltipVisible && tooltip}
     </Container>

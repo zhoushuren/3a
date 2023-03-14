@@ -91,10 +91,10 @@ export const HarvestAction: React.FunctionComponent<React.PropsWithChildren<Harv
   return (
     <ActionContainer style={{ minHeight: 124.5 }}>
       <ActionTitles>
-        <Text bold textTransform="uppercase" color="secondary" fontSize="12px" pr="4px">
+        <Text bold textTransform="uppercase" color="primary" fontSize="14px" pr="4px">
           APPLE
         </Text>
-        <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
+        <Text bold textTransform="uppercase" color="textSubtle" fontSize="14px">
           {t('Earned')}
         </Text>
       </ActionTitles>

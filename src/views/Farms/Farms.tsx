@@ -54,6 +54,17 @@ const FarmFlexWrapper = styled(Flex)`
     flex-wrap: nowrap;
   }
 `
+
+const Cbutton = styled.div`
+  display: inline-block;
+  padding: 10px 26px;
+  background: #e26288;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 20px;
+`
+
 const FarmH1 = styled(Heading)`
   font-size: 32px;
   margin-bottom: 8px;
@@ -61,7 +72,6 @@ const FarmH1 = styled(Heading)`
     font-size: 64px;
     margin-bottom: 24px;
   }
-  color:#0FA68D;
 `
 const FarmH2 = styled(Heading)`
   font-size: 16px;
@@ -70,7 +80,7 @@ const FarmH2 = styled(Heading)`
     font-size: 24px;
     margin-bottom: 18px;
   }
-  color:#999999;
+  color: #999999;
 `
 
 const ToggleWrapper = styled.div`
@@ -107,7 +117,6 @@ const ViewControls = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-
   > div {
     padding: 8px 0px;
   }
@@ -175,7 +184,7 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
 
   const [stakedOnly, setStakedOnly] = useUserFarmStakedOnly(isActive)
   const [boostedOnly, setBoostedOnly] = useState(false)
-    // console.log("farmsLP", farmsLP)
+  // console.log("farmsLP", farmsLP)
   const activeFarms = farmsLP.filter(
     (farm) => farm.pid !== 0 && farm.multiplier !== '0X' && (!poolLength || poolLength > farm.pid),
   )
@@ -207,7 +216,6 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
     (farmsToDisplay: DeserializedFarm[]): FarmWithStakedValue[] => {
       // console.log("aaaaa********************_____---------", farmsToDisplay)
       let farmsToDisplayWithAPR: FarmWithStakedValue[] = farmsToDisplay.map((farm) => {
-
         if (!farm.lpTotalInQuoteToken || !farm.quoteTokenPriceBusd) {
           // console.log("BBBBB", farm)
           return farm
@@ -249,7 +257,6 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
     let chosenFs = []
     // console.log("stakedOnlyFarms", activeFarms)
     if (isActive) {
-
       chosenFs = stakedOnly ? farmsList(stakedOnlyFarms) : farmsList(activeFarms)
     }
     if (isInactive) {
@@ -330,7 +337,7 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
       <PageHeader>
         <FarmFlexWrapper justifyContent="space-between">
           <Box>
-            <FarmH1 as="h1" scale="xxl" color="secondary" mb="24px">
+            <FarmH1 as="h1" scale="xxl" color="primary" mb="24px">
               {t('Farms')}
             </FarmH1>
             <FarmH2 scale="lg" color="text">
@@ -348,24 +355,30 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
                 id="staked-only-farms"
                 checked={stakedOnly}
                 onChange={() => setStakedOnly(!stakedOnly)}
-                scale="sm"
+                scale="md"
               />
-              <Text> {t('Staked only')}</Text>
+              <Text color="back"> {t('Staked only')}</Text>
             </ToggleWrapper>
-            <ToggleWrapper>
+            {/* <ToggleWrapper>
               <Toggle
                 id="staked-only-farms"
                 checked={boostedOnly}
                 onChange={() => setBoostedOnly((prev) => !prev)}
                 scale="sm"
               />
-              <Text> {t('Booster Available')}</Text>
-            </ToggleWrapper>
+              <Text color="back"> {t('Booster Available')}</Text>
+            </ToggleWrapper> */}
             <FarmTabButtons hasStakeInFinishedFarms={stakedInactiveFarms.length > 0} />
           </ViewControls>
           <FilterContainer>
-            <LabelWrapper>
-              <Text textTransform="uppercase">{t('Sort by')}</Text>
+            <LabelWrapper style={{ marginLeft: 16, display: 'flex' }}>
+              <Text
+                color="back"
+                textTransform="uppercase"
+                style={{ fontSize: '16px', margin: '10px 10px 0 0', whiteSpace: 'nowrap' }}
+              >
+                {t('Sort by')}
+              </Text>
               <Select
                 options={[
                   {
@@ -396,8 +409,14 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
                 onOptionChange={handleSortOptionChange}
               />
             </LabelWrapper>
-            <LabelWrapper style={{ marginLeft: 16 }}>
-              <Text textTransform="uppercase">{t('Search')}</Text>
+            <LabelWrapper style={{ marginLeft: 16, display: 'flex' }}>
+              <Text
+                color="back"
+                textTransform="uppercase"
+                style={{ fontSize: '16px', margin: '10px 10px 0 0', whiteSpace: 'nowrap' }}
+              >
+                {t('Search')}
+              </Text>
               <SearchInput initialValue={normalizedUrlSearch} onChange={handleChangeQuery} placeholder="Search Farms" />
             </LabelWrapper>
           </FilterContainer>

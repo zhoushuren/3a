@@ -87,8 +87,12 @@ const DropDownList = styled.ul`
 const ListItem = styled.li`
   list-style: none;
   padding: 8px 16px;
+
   &:hover {
-    background: ${({ theme }) => theme.colors.inputSecondary};
+    background: #e26288;
+    & > div {
+      color: #fff !important;
+    }
   }
 `
 
@@ -151,17 +155,17 @@ const Select: React.FunctionComponent<React.PropsWithChildren<SelectProps>> = ({
   return (
     <DropDownContainer isOpen={isOpen} {...props}>
       <DropDownHeader onClick={toggling}>
-        <Text color={!optionSelected && placeHolderText ? 'text' : undefined}>
+        <Text color={!optionSelected && placeHolderText ? undefined : 'primary'}>
           {!optionSelected && placeHolderText ? placeHolderText : options[selectedOptionIndex].label}
         </Text>
       </DropDownHeader>
-      <ArrowDropDownIcon color="text" onClick={toggling} />
+      <ArrowDropDownIcon color="primary" onClick={toggling} />
       <DropDownListContainer>
         <DropDownList>
           {options.map((option, index) =>
             placeHolderText || index !== selectedOptionIndex ? (
               <ListItem onClick={onOptionClicked(index)} key={option.label}>
-                <Text>{option.label}</Text>
+                <Text color="primary">{option.label}</Text>
               </ListItem>
             ) : null,
           )}

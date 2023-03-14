@@ -229,7 +229,7 @@ const Staked: React.FunctionComponent<React.PropsWithChildren<StackedActionProps
     return (
       <StyledActionContainer>
         <ActionTitles>
-          <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
+          <Text bold textTransform="uppercase" color="textSubtle" fontSize="14px">
             {t('Start Farming')}
           </Text>
         </ActionTitles>
@@ -245,10 +245,10 @@ const Staked: React.FunctionComponent<React.PropsWithChildren<StackedActionProps
       return (
         <StyledActionContainer>
           <ActionTitles>
-            <Text bold textTransform="uppercase" color="secondary" fontSize="12px" pr="4px">
+            <Text bold textTransform="uppercase" color="secondary" fontSize="14px" pr="4px">
               {lpSymbol}
             </Text>
-            <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
+            <Text bold textTransform="uppercase" color="textSubtle" fontSize="14px">
               {t('Staked')}
             </Text>
           </ActionTitles>
@@ -282,10 +282,10 @@ const Staked: React.FunctionComponent<React.PropsWithChildren<StackedActionProps
     return (
       <StyledActionContainer>
         <ActionTitles>
-          <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px" pr="4px">
+          <Text bold textTransform="uppercase" color="textSubtle" fontSize="14px" pr="4px">
             {t('Stake')}
           </Text>
-          <Text bold textTransform="uppercase" color="secondary" fontSize="12px">
+          <Text bold textTransform="uppercase" color="secondary" fontSize="14px">
             {lpSymbol}
           </Text>
         </ActionTitles>
@@ -307,7 +307,7 @@ const Staked: React.FunctionComponent<React.PropsWithChildren<StackedActionProps
     return (
       <StyledActionContainer>
         <ActionTitles>
-          <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
+          <Text bold textTransform="uppercase" color="textSubtle" fontSize="14px">
             {t('Start Farming')}
           </Text>
         </ActionTitles>
@@ -321,12 +321,12 @@ const Staked: React.FunctionComponent<React.PropsWithChildren<StackedActionProps
   return (
     <StyledActionContainer>
       <ActionTitles>
-        <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
+        <Text bold textTransform="uppercase" color="primary" fontSize="14px">
           {t('Enable Farm')}
         </Text>
       </ActionTitles>
       <ActionContent>
-        <Button width="100%" disabled={pendingTx} onClick={handleApprove} variant="secondary">
+        <Button width="100%" disabled={pendingTx} onClick={handleApprove} variant="primary">
           {t('Enable')}
         </Button>
       </ActionContent>

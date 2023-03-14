@@ -32,15 +32,15 @@ const Multiplier: React.FunctionComponent<React.PropsWithChildren<MultiplierProp
   const { t } = useTranslation()
   const tooltipContent = (
     <>
-      <Text>
+      <Text color="textSubtle">
         {t(
           'The Multiplier represents the proportion of CAKE rewards each farm receives, as a proportion of the CAKE produced each block.',
         )}
       </Text>
-      <Text my="24px">
+      <Text color="textSubtle" my="24px">
         {t('For example, if a 1x farm received 1 CAKE per block, a 40x farm would receive 40 CAKE per block.')}
       </Text>
-      <Text>{t('This amount is already included in all APR calculations for the farm.')}</Text>
+      <Text color="textSubtle">{t('This amount is already included in all APR calculations for the farm.')}</Text>
     </>
   )
   const { targetRef, tooltip, tooltipVisible } = useTooltip(tooltipContent, {
@@ -52,7 +52,7 @@ const Multiplier: React.FunctionComponent<React.PropsWithChildren<MultiplierProp
     <Container>
       <MultiplierWrapper>{displayMultiplier}</MultiplierWrapper>
       <ReferenceElement ref={targetRef}>
-        <HelpIcon color="textSubtle" />
+        <HelpIcon color="primary" />
       </ReferenceElement>
       {tooltipVisible && tooltip}
     </Container>

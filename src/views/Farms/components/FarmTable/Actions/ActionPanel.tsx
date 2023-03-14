@@ -196,10 +196,10 @@ const ActionPanel: React.FunctionComponent<React.PropsWithChildren<ActionPanelPr
             <BoostedAction
               title={(status) => (
                 <ActionTitles>
-                  <Text mr="3px" bold textTransform="uppercase" color="textSubtle" fontSize="12px">
+                  <Text mr="3px" bold textTransform="uppercase" color="textSubtle" fontSize="14px">
                     {t('Yield Booster')}
                   </Text>
-                  <Text bold textTransform="uppercase" color="secondary" fontSize="12px">
+                  <Text bold textTransform="uppercase" color="secondary" fontSize="14px">
                     {status}
                   </Text>
                 </ActionTitles>
