@@ -11,6 +11,10 @@ const variants = {
     background: "rgba(49, 208, 170, 0.1)",
     borderColor: "success",
   },
+  primary: {
+    background: "transparent",
+    borderColor: "primary",
+  },
 };
 
 export default variants;

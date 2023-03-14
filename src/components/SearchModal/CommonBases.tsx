@@ -62,7 +62,9 @@ export default function CommonBases({
   return (
     <AutoColumn gap="md">
       <AutoRow>
-        <Text fontSize="14px">{pinTokenDescText}</Text>
+        <Text color="back" fontSize="14px">
+          {pinTokenDescText}
+        </Text>
         {commonBasesType === CommonBasesType.LIQUIDITY && (
           <QuestionHelper text={t('These tokens are commonly paired with other tokens.')} ml="4px" />
         )}

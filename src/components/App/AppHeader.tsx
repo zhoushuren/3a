@@ -25,7 +25,6 @@ const AppHeaderContainer = styled(Flex)`
 
 const AppHeader: React.FC<React.PropsWithChildren<Props>> = ({ title, subtitle, helper, backTo, noConfig = false }) => {
   const [expertMode] = useExpertModeManager()
-
   return (
     <AppHeaderContainer>
       <Flex alignItems="center" width="100%" style={{ gap: '16px' }}>
@@ -33,18 +32,20 @@ const AppHeader: React.FC<React.PropsWithChildren<Props>> = ({ title, subtitle, 
           (typeof backTo === 'string' ? (
             <Link passHref href={backTo}>
               <IconButton as="a" scale="sm">
-                <ArrowBackIcon width="32px" />
+                <ArrowBackIcon color="back" width="32px" />
               </IconButton>
             </Link>
           ) : (
             <IconButton scale="sm" variant="text" onClick={backTo}>
-              <ArrowBackIcon width="32px" />
+              <ArrowBackIcon color="back" width="32px" />
             </IconButton>
           ))}
         <Flex flexDirection="column" width="100%">
           <Flex mb="8px" alignItems="center" justifyContent="space-between">
             <Flex>
-              <Heading as="h2">{title}</Heading>
+              <Heading color="primary" as="h2">
+                {title}
+              </Heading>
               {helper && <QuestionHelper text={helper} ml="4px" placement="top-start" />}
             </Flex>
             {!noConfig && (

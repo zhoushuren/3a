@@ -606,13 +606,15 @@ export default function AddLiquidity({ currencyA, currencyB }) {
               <AutoColumn gap="20px">
                 {noLiquidity && (
                   <ColumnCenter>
-                    <Message variant="warning">
+                    <Message variant="primary">
                       <div>
-                        <Text bold mb="8px">
+                        <Text color="primary" bold mb="8px">
                           {t('You are the first liquidity provider.')}
                         </Text>
-                        <Text mb="8px">{t('The ratio of tokens you add will set the price of this pool.')}</Text>
-                        <Text>{t('Once you are happy with the rate click supply to review.')}</Text>
+                        <Text color="primary" mb="8px">
+                          {t('The ratio of tokens you add will set the price of this pool.')}
+                        </Text>
+                        <Text color="primary">{t('Once you are happy with the rate click supply to review.')}</Text>
                       </div>
                     </Message>
                   </ColumnCenter>
@@ -771,7 +773,7 @@ export default function AddLiquidity({ currencyA, currencyB }) {
                   <>
                     <LightCard padding="0px" borderRadius="20px">
                       <RowBetween padding="1rem">
-                        <Text fontSize="14px">
+                        <Text color="textSubtle" fontSize="14px">
                           {noLiquidity ? t('Initial prices and pool share') : t('Prices and pool share')}
                         </Text>
                       </RowBetween>{' '}

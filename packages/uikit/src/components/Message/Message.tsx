@@ -13,6 +13,7 @@ const Icons = {
   warning: WarningIcon,
   danger: ErrorIcon,
   success: CheckmarkCircleFillIcon,
+  primary: WarningIcon,
 };
 
 const MessageContainer = styled.div<MessageProps>`
@@ -36,6 +37,7 @@ const colors = {
   warning: "#D67E0A",
   success: "#129E7D",
   danger: "failure",
+  primary: "#E26288",
 };
 
 export const MessageText: React.FC<React.PropsWithChildren<TextProps>> = ({ children, ...props }) => {

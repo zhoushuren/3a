@@ -2,10 +2,11 @@ import styled from "styled-components";
 import { m as Motion } from "framer-motion";
 
 export const Arrow = styled.div`
+  z-index: -1;
   &,
   &::before {
     position: absolute;
-    width: 10px;
+    width: 0px;
     height: 10px;
     border-radius: 2px;
     z-index: -1;
@@ -26,7 +27,7 @@ export const StyledTooltip = styled(Motion.div)`
   max-width: 320px;
   z-index: 101;
   background: ${({ theme }) => theme.tooltip.background};
-  color: ${({ theme }) => theme.tooltip.text};
+  color: #999;
   box-shadow: ${({ theme }) => theme.tooltip.boxShadow};
 
   &[data-popper-placement^="top"] > ${Arrow} {
