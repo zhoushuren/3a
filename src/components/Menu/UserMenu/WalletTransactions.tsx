@@ -53,7 +53,9 @@ const WalletTransactions: React.FC<React.PropsWithChildren> = () => {
           })}
         </TransactionsContainer>
       ) : (
-        <Text textAlign="center">{t('No recent transactions')}</Text>
+        <Text color="back" textAlign="center">
+          {t('No recent transactions')}
+        </Text>
       )}
     </Box>
   )

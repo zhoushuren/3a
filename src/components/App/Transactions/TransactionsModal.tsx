@@ -69,7 +69,7 @@ const TransactionsModal: React.FC<React.PropsWithChildren<InjectedModalProps>> =
               })}
             </>
           ) : (
-            <Text>{t('No recent transactions')}</Text>
+            <Text color="back">{t('No recent transactions')}</Text>
           )}
         </ModalBody>
       ) : (

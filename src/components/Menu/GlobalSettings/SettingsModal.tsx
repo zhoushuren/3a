@@ -150,12 +150,12 @@ const SettingsModal: React.FC<React.PropsWithChildren<InjectedModalProps>> = ({ 
                   <QuestionHelper
                     text={
                       <Box>
-                        <Text>
+                        <Text color="back">
                           {t(
                             'Zap enables simple liquidity provision. Add liquidity with one token and one click, without manual swapping or token balancing.',
                           )}
                         </Text>
-                        <Text>
+                        <Text color="back">
                           {t(
                             'If you experience any issue when adding or removing liquidity, please disable Zap and retry.',
                           )}

@@ -31,7 +31,7 @@ const invertTheme = (currentTheme: DefaultTheme) => {
 const useTooltip = (content: React.ReactNode, options: TooltipOptions): TooltipRefs => {
   const {
     placement = "auto",
-    trigger = "hover",
+    trigger = "click",
     arrowPadding = 16,
     tooltipPadding = { left: 16, right: 16 },
     tooltipOffset = [0, 10],
@@ -195,7 +195,8 @@ const useTooltip = (content: React.ReactNode, options: TooltipOptions): TooltipR
       { name: "preventOverflow", options: { padding: tooltipPadding } },
     ],
   });
-
+  styles.popper.color = "#999";
+  styles.arrow.width = "0";
   const tooltip = (
     <StyledTooltip
       {...animationMap}
