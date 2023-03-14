@@ -2,10 +2,10 @@ import { ChainId, Token } from '@pancakeswap/sdk'
 
 export const CAKE_MAINNET = new Token(
   ChainId.ARB,
-  '0xB3D943D13D30bde4Bb4F3b01A4067E8EB1285098',
+  '0xcf27765d4d6dc1d5fc51362c06e1f3f3e788bc2f',
   18,
-  'Apple',
-  'AppleSwap Token',
+  'PST',
+  'PST Token',
   'https://pancakeswap.finance/',
 )
 
@@ -133,7 +133,7 @@ export const BUSD_GOERLI = new Token(
 )
 export const WETH_ARB = new Token(
     ChainId.ARB,
-    '0x15dc8168aa893ee5abf46778ae99fd7ed9225914',
+    '0x40375C92d9FAf44d2f9db9Bd9ba41a3317a2404f',
     18,
     'WETH',
     'WETH',
@@ -141,7 +141,7 @@ export const WETH_ARB = new Token(
 )
 export const WBTC_ARB = new Token(
     ChainId.ARB,
-    '0xe4610f0194a82f23c82b07415330fc4ee9282b5b',
+    '0xe4610F0194a82F23c82b07415330FC4ee9282b5B',
     18,
     'WBTC',
     'WBTC',
@@ -149,7 +149,7 @@ export const WBTC_ARB = new Token(
 )
 export const USDT_ARB = new Token(
     ChainId.ARB,
-    '0x9ebab27608bd64aff36f027049aecc69102a0d1e',
+    '0x9Ebab27608bD64AFf36f027049aECC69102a0D1e',
     6,
     'USDT',
     'USDT',

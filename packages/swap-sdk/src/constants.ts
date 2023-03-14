@@ -101,10 +101,10 @@ export const WETH9 = {
   ),
   [ChainId.ARB]: new Token(
       ChainId.ARB,
-      '0x40375c92d9faf44d2f9db9bd9ba41a3317a2404f',
+      '0x40375C92d9FAf44d2f9db9Bd9ba41a3317a2404f',
       18,
-      'WETH',
-      'Wrapped Ether',
+      'WCORE',
+      'Wrapped CORE',
       'https://weth.io'
   ),
 }
@@ -154,7 +154,7 @@ export const NATIVE: Record<
   }
 > = {
   // [ChainId.ETHEREUM]: { name: 'Ether', symbol: 'ETH', decimals: 18 },
-  [ChainId.ARB]: { name: 'Ether', symbol: 'ETH', decimals: 18 },
+  [ChainId.ARB]: { name: 'CORE', symbol: 'CORE', decimals: 18 },
   // [ChainId.RINKEBY]: { name: 'Rinkeby Ether', symbol: 'RIN', decimals: 18 },
   // [ChainId.GOERLI]: { name: 'Goerli Ether', symbol: 'GOR', decimals: 18 },
   // [ChainId.BSC]: {
