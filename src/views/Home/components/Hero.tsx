@@ -128,7 +128,7 @@ const Hero = () => {
       >
         <Flex flex="1" flexDirection="column">
           <Heading scale="xxl" color="secondary" mb="24px">
-              PIPE
+            PIPE
           </Heading>
           <Heading scale="md" mb="24px">
             {t('Trade, earn, and win crypto on the most popular decentralized platform in the galaxy.')}

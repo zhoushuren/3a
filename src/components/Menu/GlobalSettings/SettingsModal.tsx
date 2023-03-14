@@ -104,7 +104,7 @@ const SettingsModal: React.FC<React.PropsWithChildren<InjectedModalProps>> = ({ 
               <Text bold textTransform="uppercase" fontSize="18px" color="secondary" mb="24px">
                 {t('Global')}
               </Text>
-               <Flex justifyContent="space-between" mb="24px">
+              <Flex justifyContent="space-between" mb="24px">
                 <Text>{t('Dark mode')}</Text>
                 {/* <ThemeSwitcher isDark={isDark} toggleTheme={() => setTheme(isDark ? 'light' : 'dark')} /> */}
               </Flex>
@@ -146,7 +146,7 @@ const SettingsModal: React.FC<React.PropsWithChildren<InjectedModalProps>> = ({ 
             {SUPPORT_ZAP.includes(chainId) && (
               <Flex justifyContent="space-between" alignItems="center" mb="24px">
                 <Flex alignItems="center">
-                  <Text>{t('Zap (Beta)')}</Text>
+                  <Text color="back">{t('Zap (Beta)')}</Text>
                   <QuestionHelper
                     text={
                       <Box>
@@ -177,7 +177,7 @@ const SettingsModal: React.FC<React.PropsWithChildren<InjectedModalProps>> = ({ 
             )}
             <Flex justifyContent="space-between" alignItems="center" mb="24px">
               <Flex alignItems="center">
-                <Text>{t('Expert Mode')}</Text>
+                <Text color="back">{t('Expert Mode')}</Text>
                 <QuestionHelper
                   text={t('Bypasses confirmation modals and allows high slippage trades. Use at your own risk.')}
                   placement="top-start"
@@ -193,7 +193,7 @@ const SettingsModal: React.FC<React.PropsWithChildren<InjectedModalProps>> = ({ 
             </Flex>
             <Flex justifyContent="space-between" alignItems="center" mb="24px">
               <Flex alignItems="center">
-                <Text>{t('Disable Multihops')}</Text>
+                <Text color="back">{t('Disable Multihops')}</Text>
                 <QuestionHelper text={t('Restricts swaps to direct pairs only.')} placement="top-start" ml="4px" />
               </Flex>
               <Toggle
@@ -207,7 +207,7 @@ const SettingsModal: React.FC<React.PropsWithChildren<InjectedModalProps>> = ({ 
             </Flex>
             <Flex justifyContent="space-between" alignItems="center" mb="24px">
               <Flex alignItems="center">
-                <Text>{t('Flippy sounds')}</Text>
+                <Text color="back">{t('Flippy sounds')}</Text>
                 <QuestionHelper
                   text={t('Fun sounds to make a truly immersive pancake-flipping trading experience')}
                   placement="top-start"

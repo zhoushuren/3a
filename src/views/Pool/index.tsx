@@ -5,16 +5,27 @@ import Link from 'next/link'
 import { useWeb3React } from '@pancakeswap/wagmi'
 import { useTranslation } from '@pancakeswap/localization'
 import { useLPTokensWithBalanceByAccount } from 'views/Swap/StableSwap/hooks/useStableConfig'
+import Image from 'next/image'
 import FullPositionCard, { StableFullPositionCard } from '../../components/PositionCard'
 import { useTokenBalancesWithLoadingIndicator } from '../../state/wallet/hooks'
 import { usePairs, PairState } from '../../hooks/usePairs'
 import { toV2LiquidityToken, useTrackedTokenPairs } from '../../state/user/hooks'
 import Dots from '../../components/Loader/Dots'
 import { AppHeader, AppBody } from '../../components/App'
+// import nodataImage from '../../../../public/images/liquidity/nodata.png'
+import nodataImage from '../../../public/images/liquidity/nodata.png'
+
 import Page from '../Page'
 
 const Body = styled(CardBody)`
   background-color: ${({ theme }) => theme.colors.dropdownDeep};
+`
+const BunnyWrapper = styled.div`
+  width: 70px;
+  margin: 0 auto;
+  > span {
+    overflow: visible !important; // make sure the next-image pre-build blur image not be cropped
+  }
 `
 
 export default function Pool() {
@@ -102,9 +113,14 @@ export default function Pool() {
     }
 
     return (
-      <Text color="textSubtle" textAlign="center">
-        {t('No liquidity found.')}
-      </Text>
+      <>
+        <BunnyWrapper>
+          <Image src={nodataImage} style={{ margin: 'auto' }} width={70} height={99} />
+        </BunnyWrapper>
+        <Text color="textSubtle" textAlign="center">
+          {t('No liquidity found.')}
+        </Text>
+      </>
     )
   }
 
@@ -120,9 +136,9 @@ export default function Pool() {
                 {t("Don't see a pool you joined?")}
               </Text>
               <Link href="/find" passHref>
-                <Button id="import-pool-link" variant="secondary" scale="sm" as="a">
+                <Text color="primary" mb="8px" style={{ cursor: 'pointer' }}>
                   {t('Find other LP tokens')}
-                </Button>
+                </Text>
               </Link>
             </Flex>
           )}

@@ -161,11 +161,11 @@ export default function CurrencyInputPanel({
                 <CurrencyLogo currency={currency} size="24px" style={{ marginRight: '8px' }} />
               ) : null}
               {pair ? (
-                <Text id="pair" bold>
+                <Text id="pair" bold color="primary">
                   {pair?.token0.symbol}:{pair?.token1.symbol}
                 </Text>
               ) : (
-                <Text id="pair" bold>
+                <Text id="pair" bold color="primary">
                   {(currency && currency.symbol && currency.symbol.length > 20
                     ? `${currency.symbol.slice(0, 4)}...${currency.symbol.slice(
                         currency.symbol.length - 5,
@@ -174,7 +174,7 @@ export default function CurrencyInputPanel({
                     : currency?.symbol) || t('Select a currency')}
                 </Text>
               )}
-              {!disableCurrencySelect && <ChevronDownIcon />}
+              {!disableCurrencySelect && <ChevronDownIcon color="primary" />}
             </Flex>
           </CurrencySelectButton>
           {token && tokenAddress ? (

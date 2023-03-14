@@ -78,7 +78,7 @@ export default function CommonBases({
             disable={selectedCurrency?.isNative}
           >
             <CurrencyLogo currency={native} style={{ marginRight: 8 }} />
-            <Text>{native?.symbol}</Text>
+            <Text color="back">{native?.symbol}</Text>
           </BaseWrapper>
         </ButtonWrapper>
         {(chainId ? SUGGESTED_BASES[chainId] || [] : []).map((token: Token) => {
@@ -87,7 +87,7 @@ export default function CommonBases({
             <ButtonWrapper>
               <BaseWrapper onClick={() => !selected && onSelect(token)} disable={selected} key={token.address}>
                 <CurrencyLogo currency={token} style={{ marginRight: 8, borderRadius: '50%' }} />
-                <Text>{token.symbol}</Text>
+                <Text color="back">{token.symbol}</Text>
               </BaseWrapper>
             </ButtonWrapper>
           )

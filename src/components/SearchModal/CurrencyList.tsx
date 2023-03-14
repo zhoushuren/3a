@@ -89,7 +89,9 @@ function CurrencyRow({
     >
       <CurrencyLogo currency={currency} size="24px" />
       <Column>
-        <Text bold>{currency.symbol}</Text>
+        <Text bold color="back">
+          {currency.symbol}
+        </Text>
         <Text color="textSubtle" small ellipsis maxWidth="200px">
           {!isOnSelectedList && customAdded && `${t('Added by user')} •`} {currency.name}
         </Text>
