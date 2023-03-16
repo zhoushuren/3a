@@ -532,7 +532,7 @@ export default function RemoveLiquidity({ currencyA, currencyB, currencyIdA, cur
 
   const [onPresentRemoveLiquidity] = useModal(
     <ConfirmLiquidityModal
-      title={t('You will receive')}
+      title={t('You will receive1')}
       customOnDismiss={handleDismissConfirmation}
       attemptingTxn={attemptingTxn}
       hash={txHash || ''}
@@ -577,14 +577,14 @@ export default function RemoveLiquidity({ currencyA, currencyB, currencyIdA, cur
         <CardBody>
           <AutoColumn gap="20px">
             <RowBetween>
-              <Text>{t('Amount')}</Text>
+              <Text color="secondary">{t('Amount')}</Text>
               <Button variant="text" scale="sm" onClick={() => setShowDetailed(!showDetailed)}>
                 {showDetailed ? t('Simple') : t('Detailed')}
               </Button>
             </RowBetween>
             {!showDetailed && (
               <BorderCard>
-                <Text fontSize="40px" bold mb="16px" style={{ lineHeight: 1 }}>
+                <Text color="secondary" fontSize="40px" bold mb="16px" style={{ lineHeight: 1 }}>
                   {formattedAmounts[Field.LIQUIDITY_PERCENT]}%
                 </Text>
                 <Slider
@@ -640,10 +640,10 @@ export default function RemoveLiquidity({ currencyA, currencyB, currencyIdA, cur
                       </Text>
                     </Flex>
                     <Flex>
-                      <Text small bold>
+                      <Text small bold color="secondary">
                         {formattedAmounts[Field.CURRENCY_A] || '0'}
                       </Text>
-                      <Text small ml="4px">
+                      <Text small ml="4px" color="secondary">
                         ({isZapOutA ? '100' : !isZap ? '50' : '0'}%)
                       </Text>
                     </Flex>
@@ -666,10 +666,10 @@ export default function RemoveLiquidity({ currencyA, currencyB, currencyIdA, cur
                       </Text>
                     </Flex>
                     <Flex>
-                      <Text bold small>
+                      <Text bold small color="secondary">
                         {formattedAmounts[Field.CURRENCY_B] || '0'}
                       </Text>
-                      <Text small ml="4px">
+                      <Text small ml="4px" color="secondary">
                         ({isZapOutB ? '100' : !isZap ? '50' : '0'}%)
                       </Text>
                     </Flex>
@@ -787,7 +787,7 @@ export default function RemoveLiquidity({ currencyA, currencyB, currencyIdA, cur
                   <Text small color="textSubtle">
                     1 {currencyA?.symbol} =
                   </Text>
-                  <Text small>
+                  <Text small color="secondary">
                     {tokenA ? pair.priceOf(tokenA).toSignificant(6) : '-'} {currencyB?.symbol}
                   </Text>
                 </Flex>
@@ -795,7 +795,7 @@ export default function RemoveLiquidity({ currencyA, currencyB, currencyIdA, cur
                   <Text small color="textSubtle">
                     1 {currencyB?.symbol} =
                   </Text>
-                  <Text small>
+                  <Text small color="secondary">
                     {tokenB ? pair.priceOf(tokenB).toSignificant(6) : '-'} {currencyA?.symbol}
                   </Text>
                 </Flex>

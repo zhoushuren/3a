@@ -190,7 +190,7 @@ function MinimalPositionCardView({
                 </RowFixed>
                 <RowFixed>
                   <Flex flexDirection="column" alignItems="flex-end">
-                    <Text>{userPoolBalance ? userPoolBalance.toSignificant(4) : '-'}</Text>
+                    <Text color="secondary">{userPoolBalance ? userPoolBalance.toSignificant(4) : '-'}</Text>
                     {Number.isFinite(totalUSDValue) && (
                       <Text small color="textSubtle">{`(~${totalUSDValue.toLocaleString(undefined, {
                         minimumFractionDigits: 2,
@@ -207,14 +207,14 @@ function MinimalPositionCardView({
                       {t('LP reward APR')}:
                     </TooltipText>
                     {tooltipVisible && tooltip}
-                    <Text>{formatAmount(poolData.lpApr7d)}%</Text>
+                    <Text color="secondary">{formatAmount(poolData.lpApr7d)}%</Text>
                   </FixedHeightRow>
                 )}
                 <FixedHeightRow>
                   <Text color="textSubtle" small>
                     {t('Share of Pool')}:
                   </Text>
-                  <Text>{poolTokenPercentage ? `${poolTokenPercentage.toFixed(6)}%` : '-'}</Text>
+                  <Text color="secondary">{poolTokenPercentage ? `${poolTokenPercentage.toFixed(6)}%` : '-'}</Text>
                 </FixedHeightRow>
                 {isStableLP ? null : (
                   <FixedHeightRow>
@@ -223,7 +223,9 @@ function MinimalPositionCardView({
                     </Text>
                     {token0Deposited ? (
                       <RowFixed>
-                        <Text ml="6px">{token0Deposited?.toSignificant(6)}</Text>
+                        <Text ml="6px" color="secondary">
+                          {token0Deposited?.toSignificant(6)}
+                        </Text>
                       </RowFixed>
                     ) : (
                       '-'
@@ -237,7 +239,9 @@ function MinimalPositionCardView({
                     </Text>
                     {token1Deposited ? (
                       <RowFixed>
-                        <Text ml="6px">{token1Deposited?.toSignificant(6)}</Text>
+                        <Text color="secondary" ml="6px">
+                          {token1Deposited?.toSignificant(6)}
+                        </Text>
                       </RowFixed>
                     ) : (
                       '-'
@@ -250,7 +254,7 @@ function MinimalPositionCardView({
         </Card>
       ) : (
         <LightCard>
-          <Text fontSize="14px" style={{ textAlign: 'center' }}>
+          <Text color="secondary" fontSize="14px" style={{ textAlign: 'center' }}>
             <span role="img" aria-label="pancake-icon">
               🥞
             </span>{' '}
@@ -322,7 +326,9 @@ function FullPositionCard({
               </RowFixed>
               {token0Deposited ? (
                 <RowFixed>
-                  <Text ml="6px">{token0Deposited?.toSignificant(6)}</Text>
+                  <Text color="secondary" ml="6px">
+                    {token0Deposited?.toSignificant(6)}
+                  </Text>
                 </RowFixed>
               ) : (
                 '-'
@@ -340,7 +346,9 @@ function FullPositionCard({
               </RowFixed>
               {token1Deposited ? (
                 <RowFixed>
-                  <Text ml="6px">{token1Deposited?.toSignificant(6)}</Text>
+                  <Text color="secondary" ml="6px">
+                    {token1Deposited?.toSignificant(6)}
+                  </Text>
                 </RowFixed>
               ) : (
                 '-'
@@ -355,13 +363,13 @@ function FullPositionCard({
                 </TooltipText>
                 {tooltipVisible && tooltip}
               </RowFixed>
-              <Text>{formatAmount(poolData.lpApr7d)}%</Text>
+              <Text color="secondary">{formatAmount(poolData.lpApr7d)}%</Text>
             </FixedHeightRow>
           )}
 
           <FixedHeightRow>
             <Text color="textSubtle">{t('Share of Pool')}</Text>
-            <Text>
+            <Text color="secondary">
               {poolTokenPercentage
                 ? `${poolTokenPercentage.toFixed(2) === '0.00' ? '<0.01' : poolTokenPercentage.toFixed(2)}%`
                 : '-'}
