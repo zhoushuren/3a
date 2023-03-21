@@ -1,4 +1,4 @@
-import {arbTokens, bscTestnetTokens} from '@pancakeswap/tokens'
+import {coreTokens, bscTestnetTokens} from '@pancakeswap/tokens'
 import { SerializedFarmConfig } from '@pancakeswap/farms'
 
 const farms: SerializedFarmConfig[] = [
@@ -23,27 +23,38 @@ const farms: SerializedFarmConfig[] = [
     //     // isCommunity: true,
     // },
     {
-        pid: 2,
-        lpSymbol: 'Test-USDT LP',
-        lpAddress: '0xFCd19e5FcBe76197B9867AB8928449e92C10f929',
-        token: arbTokens.test,
-        quoteToken: arbTokens.usdt,
+        pid: 1,
+        lpSymbol: 'BTC-USDT LP',
+        lpAddress: '0x7019d0d26daffec41b2557c1d65ffcdf94d78020',
+        token: coreTokens.btc,
+        quoteToken: coreTokens.usdt,
         // multiplier: "10X",
         // boosted: true,
         // multiplier: 1
         // isCommunity: true,
     },
     {
-        pid: 3,
-        lpSymbol: 'WETH-USDT LP',
-        lpAddress: '0x77F0A5cE27eb9Bd3b262ff8b6f55Af497324c77A',
-        token: arbTokens.usdt,
-        quoteToken: arbTokens.weth,
-        // multiplier: "10X",
+        pid: 2,
+        lpSymbol: 'Test-USDT LP',
+        lpAddress: '0x7019d0d26daffec41b2557c1d65ffcdf94d78020',
+        token: coreTokens.test,
+        quoteToken: coreTokens.usdt,
+        multiplier: "10X",
         // boosted: true,
-        // multiplier: 1
-        // isCommunity: true,
+        // multiplier: 1,
+        isCommunity: true,
     },
+    // {
+    //     pid: 3,
+    //     lpSymbol: 'WETH-USDT LP',
+    //     lpAddress: '0x77F0A5cE27eb9Bd3b262ff8b6f55Af497324c77A',
+    //     token: arbTokens.usdt,
+    //     quoteToken: arbTokens.weth,
+    //     // multiplier: "10X",
+    //     // boosted: true,
+    //     // multiplier: 1
+    //     // isCommunity: true,
+    // },
     // {
     //     pid: 3,
     //     lpSymbol: 'BUSD-CAKE LP',

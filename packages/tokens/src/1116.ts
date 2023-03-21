@@ -1,7 +1,7 @@
 import {ChainId, Token, WETH9} from '@pancakeswap/sdk'
 import {CAKE} from "./common";
 
-export const arbTokens = {
+export const coreTokens = {
     wcore: WETH9[ChainId.ARB],
     usdc: new Token(
         ChainId.ARB,

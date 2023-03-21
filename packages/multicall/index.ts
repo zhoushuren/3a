@@ -83,7 +83,7 @@ export function createMulticall<TProvider>(provider: ({ chainId }: { chainId?: n
     const multi = getMulticallContract(chainId, _provider || provider({ chainId }))
     if (!multi) throw new Error(`Multicall Provider missing for ${chainId}`)
     const itf = new Interface(abi)
-
+    console.log(calls)
     const calldata = calls.map((call) => ({
       target: call.address.toLowerCase(),
       callData: itf.encodeFunctionData(call.name, call.params),
