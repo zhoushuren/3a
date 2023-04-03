@@ -9,7 +9,7 @@ export const ROUTER_ADDRESS: ChainMap<string> = {
   [ChainId.GOERLI]: '0x3BC722f252C7bAE2f55647e49aDcB9d33Ff6eBcC',
   [ChainId.BSC]: '0x10ED43C718714eb63d5aA57B78B54704E256024E',
   [ChainId.BSC_TESTNET]: '0xD99D1c33F9fC3444f8101754aBC46c52416550D1',
-  [ChainId.ARB]: '0x48ce441936933A85Ce2cA491020906c3021753F5',
+  [ChainId.ARB]: '0x83767d49EF230d93f1Fcaad0d43a7CF27C66B5CE',
 }
 
 // used to construct intermediary pairs for trading
@@ -129,12 +129,12 @@ export const BASE_FEE = new Percent(JSBI.BigInt(25), BIPS_BASE)
 export const INPUT_FRACTION_AFTER_FEE = ONE_HUNDRED_PERCENT.subtract(BASE_FEE)
 
 // BNB
-export const DEFAULT_INPUT_CURRENCY = 'APPLE'
+export const DEFAULT_INPUT_CURRENCY = 'PDT'
 // CAKE
-export const DEFAULT_OUTPUT_CURRENCY = '0xB3D943D13D30bde4Bb4F3b01A4067E8EB1285098'
+export const DEFAULT_OUTPUT_CURRENCY = '0x0449c37bcac6333620520A40c85F29BDbCe40C94'
 
 // Handler string is passed to Gelato to use PCS router
-export const GELATO_HANDLER = 'appleswap'
+export const GELATO_HANDLER = 'pipeswap'
 export const GENERIC_GAS_LIMIT_ORDER_EXECUTION = BigNumber.from(500000)
 
 export const LIMIT_ORDERS_DOCS_URL = 'https://docs.pancakeswap.finance/products/pancakeswap-exchange/limit-orders'

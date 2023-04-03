@@ -114,22 +114,22 @@ export const bscTest: Chain = {
   },
   testnet: true,
 }
-const arbExplorer = { name: 'CoreScan', url: 'https://scan.coredao.org/' }
+const arbExplorer = { name: 'arbScan', url: 'https://arbiscan.io' }
 export const arb: Chain = {
-  id: 1116,
-  name: 'CORE',
-  network: 'CORE',
+  id: 42161,
+  name: 'Arbitrum One',
+  network: 'Arbitrum One',
   rpcUrls: {
-    public: 'https://rpc.coredao.org',
-    default: 'https://rpc.coredao.org',
+    public: 'https://arb1.arbitrum.io/rpc',
+    default: 'https://arb1.arbitrum.io/rpc',
   },
   blockExplorers: {
     default: arbExplorer,
     etherscan: arbExplorer,
   },
   nativeCurrency: {
-    name: 'CORE',
-    symbol: 'CORE',
+    name: 'ETH',
+    symbol: 'ETH',
     decimals: 18,
   },
   multicall: {

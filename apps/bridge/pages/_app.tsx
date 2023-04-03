@@ -67,7 +67,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <meta name="theme-color" content="#1FC7D4" />
         <meta name="twitter:image" content="https://AppleSwap.finance/images/hero.png" />
-        <title>AppleSwap</title>
+        <title>PIPESwap</title>
       </Head>
       <NextThemeProvider>
         <StyledThemeProvider>
