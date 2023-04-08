@@ -11,9 +11,9 @@ const getTokenLogoURL = (token?: Token) => {
     // console.log(token)
     return `https://assets-cdn.trustwallet.com/blockchains/${mapping[token.chainId]}/assets/${token.address}/logo.png`
     // return ``
-    // if(token.address === "0xCf27765d4D6dc1d5Fc51362C06E1f3f3e788BC2F") {
-    //   return 'https://assets-cdn.trustwallet.com/blockchains/arbitrum/assets/0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9/logo.png'
-    // }
+    if (token.address === "0x0449c37bcac6333620520A40c85F29BDbCe40C94") {
+      return `https://pipeswap.io/logo/${token.address}/logo.png`
+    }
   }
   return null
 }
