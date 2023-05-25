@@ -4,7 +4,10 @@ import Container from '../Layout/Container'
 import { PageHeaderProps } from './types'
 
 const Outer = styled(Box)<{ background?: string }>`
-  background: ${({ theme, background }) => background || theme.colors.gradientBubblegum};
+  //background: ${({ theme, background }) => background || theme.colors.gradientBubblegum};
+  background-image: url("images/farms_banner.png");
+  background-repeat: no-repeat;
+  background-size: contain;
 `
 
 const Inner = styled(Container)`

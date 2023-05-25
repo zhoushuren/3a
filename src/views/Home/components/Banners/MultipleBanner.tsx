@@ -26,7 +26,10 @@ const BannerPlaceHolder = styled.div<{ walletConnected: boolean }>`
     left: 0px;
     right: 0px;
     bottom: 0px;
-    background:  linear-gradient(93.64deg, #6ACC76 17.34%, #4885BD 61.52%, #2FA1F3 94.69%);
+    //background:  linear-gradient(0deg, #2FD674, #2FD674);
+    background-image: url("images/home_banner_bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
     ${({ theme }) => theme.mediaQueries.sm} {
       top: 20px;
       left: 20px;

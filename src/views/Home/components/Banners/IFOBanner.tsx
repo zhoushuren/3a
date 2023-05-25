@@ -46,7 +46,7 @@ const IFOIconImage = styled.div<{ src: string }>`
   height: 35px;
   bottom: 35px;
   right: 95px;
-  overflow: hidden;
+  //overflow: hidden;
   border-radius: 50%;
   z-index: 2;
   ${({ theme }) => theme.mediaQueries.sm} {

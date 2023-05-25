@@ -18,6 +18,13 @@ import { MenuContext } from "./context";
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
+  
+  //background-image: url(images/swap_bg1.png);
+  background-image: url('${({theme}) => (theme.isDark? 'images/swap_bg.png': 'images/swap_bg1.png')}');
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  
 `;
 
 const StyledNav = styled.nav`
@@ -26,10 +33,10 @@ const StyledNav = styled.nav`
   align-items: center;
   width: 100%;
   height: ${MENU_HEIGHT}px;
-  background-color: ${({ theme }) => theme.nav.background};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
+  //background-color: ${({ theme }) => theme.nav.background};
+  //border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
   transform: translate3d(0, 0, 0);
-  background-color: #42C18E;
+  background-color: rgba(255,255,255,0);
   padding-left: 16px;
   padding-right: 16px;
 `;
@@ -165,7 +172,7 @@ const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({
             )}
           </Flex>
         )}
-        <BodyWrapper mt={!subLinks ? `${totalTopMenuHeight + 1}px` : "0"}>
+        <BodyWrapper mt={!subLinks ? `${0}px` : "0"}>
           <Inner isPushed={false} showMenu={showMenu}>
             {children}
             <Footer

@@ -9,10 +9,9 @@ export const THEME_DOMAIN = '.appleswap.finance'
 const useTheme = () => {
   const { resolvedTheme, setTheme } = useNextTheme()
   const theme = useContext(StyledThemeContext)
-  setTheme("light")
   const handleSwitchTheme = (themeValue: 'light') => {
     try {
-      setTheme("light")
+      setTheme(themeValue)
       Cookie.set(COOKIE_THEME_KEY, "light", { domain: THEME_DOMAIN })
     } catch (err) {
       // ignore set cookie error for perp theme

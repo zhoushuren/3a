@@ -61,7 +61,6 @@ const FarmH1 = styled(Heading)`
     font-size: 64px;
     margin-bottom: 24px;
   }
-  color:#0FA68D;
 `
 const FarmH2 = styled(Heading)`
   font-size: 16px;
@@ -70,7 +69,6 @@ const FarmH2 = styled(Heading)`
     font-size: 24px;
     margin-bottom: 18px;
   }
-  color:#999999;
 `
 
 const ToggleWrapper = styled.div`

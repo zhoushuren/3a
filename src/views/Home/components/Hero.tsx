@@ -147,7 +147,7 @@ const Hero = () => {
           position="relative"
         >
           <BunnyWrapper>
-            <Image src={appleTreeImage} priority placeholder="blur" alt={t('Lunar bunny')} width={306} height={306} />
+            <Image src={appleTreeImage} priority placeholder="blur" alt={t('Lunar bunny')} width={788} height={788} />
           </BunnyWrapper>
         </Flex>
       </Flex>

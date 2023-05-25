@@ -27,7 +27,7 @@ export const swapSectionData = (t: TranslateFunction): SalesSectionProps => ({
 
 export const earnSectionData = (t: TranslateFunction): SalesSectionProps => ({
   headingText: t('Earn passive income with crypto.'),
-  bodyText: t('PancakeSwap makes it easy to make your crypto work for you.'),
+  // bodyText: t('PancakeSwap makes it easy to make your crypto work for you.'),
   reverse: true,
   primaryButton: {
     to: '/farms',
@@ -42,17 +42,18 @@ export const earnSectionData = (t: TranslateFunction): SalesSectionProps => ({
   images: {
     path: '/images/home/earn/',
     attributes: [
-      { src: 'pie', alt: t('Pie chart') },
-      { src: 'stonks', alt: t('Stocks chart') },
-      { src: 'folder', alt: t('Folder with cake token') },
+      // { src: 'pie', alt: t('Pie chart') },
+      // { src: 'stonks', alt: t('Stocks chart') },
+      // { src: 'folder', alt: t('Folder with cake token') },
+      { src: 'earn', alt: t('Earn token') },
     ],
   },
 })
 
 export const cakeSectionData = (t: TranslateFunction): SalesSectionProps => ({
-  headingText: t('CAKE makes our world go round.'),
+  headingText: t('APPLE makes our world go round.'),
   bodyText: t(
-    'CAKE token is at the heart of the PancakeSwap ecosystem. Buy it, win it, farm it, spend it, stake it... heck, you can even vote with it!',
+    'APPLE token is at the heart of the AppleHome (1).pngSwap ecosystem. Buy it, win it, farm it, spend it, stake it... heck, you can even vote with it!',
   ),
   reverse: false,
   primaryButton: {
@@ -69,10 +70,11 @@ export const cakeSectionData = (t: TranslateFunction): SalesSectionProps => ({
   images: {
     path: '/images/home/cake/',
     attributes: [
-      { src: 'bottom-right', alt: t('Small 3d pancake') },
-      { src: 'top-right', alt: t('Small 3d pancake') },
-      { src: 'coin', alt: t('CAKE token') },
-      { src: 'top-left', alt: t('Small 3d pancake') },
+      // { src: 'bottom-right', alt: t('Small 3d pancake') },
+      // { src: 'top-right', alt: t('Small 3d pancake') },
+      // { src: 'coin', alt: t('CAKE token') },
+      // { src: 'top-left', alt: t('Small 3d pancake') },
+      { src: 'buy', alt: t('Buy') },
     ],
   },
 })

@@ -29,7 +29,7 @@ interface Props {
 
 const CurrencyInputContainer = styled(Flex)`
   flex-direction: column;
-  align-items: center;
+  //align-items: center;
   padding: 24px;
   width: 100%;
   border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
@@ -57,7 +57,7 @@ const CurrencyInputHeader: React.FC<React.PropsWithChildren<Props>> = ({
   return (
     <CurrencyInputContainer>
       <Flex width="100%" alignItems="center" justifyContent="space-between">
-        <Flex flexDirection="column" alignItems="flex-end" width="100%" mr={18}>
+        <Flex flexDirection="column" alignItems="flex-start" width="100%" mr={18}>
           <Heading as="h2">{title}</Heading>
         </Flex>
         <Flex>

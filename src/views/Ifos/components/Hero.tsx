@@ -13,16 +13,20 @@ const StyledHero = styled(Box)`
 `
 
 const StyledHeading = styled(Heading)`
-  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 48px;
+  color: #61D361;
 
   ${({ theme }) => theme.mediaQueries.md} {
-    font-size: 64px;
+    font-size: 32px;
   }
 `
 
 const StyledButton = styled(Button)`
   background-color: ${({ theme }) => theme.colors.tertiary};
-  color: ${({ theme }) => theme.colors.primary};
+  //color: ${({ theme }) => theme.colors.primary};
   padding: 4px 13px;
   height: auto;
   text-transform: uppercase;
@@ -35,12 +39,16 @@ const StyledButton = styled(Button)`
 
 const DesktopButton = styled(Button)`
   align-self: flex-end;
-  background: ${({ theme }) => theme.colors.primary};
+  // background: ${({ theme }) => theme.colors.primary};
+  background: linear-gradient(275.76deg, #2ED573 44.33%, #7BED9F 98.56%);
+  box-shadow: 0px 10px 10px rgba(46, 213, 115, 0.15);
+  border-radius: 30px;
 `
 
 const StyledSubTitle = styled(Text)`
-  font-size: 16px;
-  color: ${({ theme }) => theme.colors.textSubtle};
+  font-size: 14px;
+  //color: ${({ theme }) => theme.colors.textSubtle};
+  color: #788094;
   ${({ theme }) => theme.mediaQueries.md} {
     font-size: 20px;
   }
@@ -75,7 +83,7 @@ const Hero = () => {
                 {t('IFO: Initial Farm Offerings')}
               </StyledHeading>
               <StyledSubTitle bold>
-                {t('Buy new tokens launching on BNB Smart Chain')}
+                {t('Buy new tokens launching on ARB')}
                 {isMobile && <StyledButton onClick={handleClick}>{t('How does it work?')}</StyledButton>}
               </StyledSubTitle>
             </Box>

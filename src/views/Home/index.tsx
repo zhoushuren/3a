@@ -57,28 +57,34 @@ const Home: React.FC<React.PropsWithChildren> = () => {
       <PageMeta />
       <style jsx global>{`
         #home-1 .page-bg {
-          background: linear-gradient(139.73deg, #e6fdff 0%, #f3efff 100%);
+          //background:  linear-gradient(109.51deg, rgba(97, 211, 97, 0.19) 6.33%, rgba(97, 211, 177, 0.09) 91.34%);;
+          background: #E3F8F3;
         }
         [data-theme='dark'] #home-1 .page-bg {
-          background: radial-gradient(103.12% 50% at 50% 50%, #21193a 0%, #191326 100%);
+          //background: linear-gradient(109.51deg, #181E31 6.33%, #363266 91.34%);
+           background: #192852;
         }
         #home-2 .page-bg {
-          background: linear-gradient(180deg, #ffffff 22%, #d7caec 100%);
+          //background: linear-gradient(180deg, rgba(255, 255, 255, 0) 18.52%, rgba(180, 196, 255, 0.4) 100%);
+          background: #E3F8F3;
         }
         [data-theme='dark'] #home-2 .page-bg {
-          background: linear-gradient(180deg, #09070c 22%, #201335 100%);
+          //background: linear-gradient(180deg, #28274D 18.52%, rgba(180, 196, 255, 0.4) 100%);
+           background: #192852;
         }
         #home-3 .page-bg {
           background: linear-gradient(180deg, #6fb6f1 0%, #eaf2f6 100%);
         }
         [data-theme='dark'] #home-3 .page-bg {
-          background: linear-gradient(180deg, #0b4576 0%, #091115 100%);
+          //background:  linear-gradient(100.25deg, #00100B 3.49%, #C0FFEC 3.49%, #DBE4FF 98.57%);
+           background: #192852;
         }
         #home-4 .inner-wedge svg {
-          fill: #d8cbed;
+          //fill: #d8cbed;
         }
         [data-theme='dark'] #home-4 .inner-wedge svg {
-          fill: #201335;
+          //fill: #201335;
+           background: #192852;
         }
       `}</style>
       <StyledHeroSection
@@ -92,6 +98,52 @@ const Home: React.FC<React.PropsWithChildren> = () => {
         <MultipleBanner />
         <Hero />
       </StyledHeroSection>
+        <PageSection
+            innerProps={{ style: { margin: '0', width: '100%' } }}
+            // background={
+            //     theme.isDark
+            //         ? 'linear-gradient(180deg, rgba(255, 255, 255, 0) 18.52%, rgba(180, 196, 255, 0.4) 100%)'
+            //         : 'linear-gradient(180deg, rgba(255, 255, 255, 0) 18.52%, rgba(180, 196, 255, 0.4) 100%)'
+            // }
+            containerProps={{
+                id: 'home-2',
+            }}
+            index={2}
+            hasCurvedDivider={false}
+        >
+            <MetricsSection />
+        </PageSection>
+
+        <PageSection
+            innerProps={{ style: HomeSectionContainerStyles }}
+            background={theme.colors.gradientCardHeader}
+            index={2}
+            containerProps={{
+                id: 'home-2',
+            }}
+            hasCurvedDivider={false}
+        >
+            <OuterWedgeWrapper>
+                {/*<InnerWedgeWrapper width="150%" top fill={theme.colors.background}>*/}
+                {/*    <InnerWedgeWrapper width="150%" top>*/}
+                {/*        <WedgeTopRight />*/}
+                {/*    </InnerWedgeWrapper>*/}
+            </OuterWedgeWrapper>
+            <SalesSection {...earnSectionData(t)} />
+
+        </PageSection>
+        <PageSection
+            innerProps={{ style: HomeSectionContainerStyles }}
+            // background={theme.colors.background}
+            index={2}
+            hasCurvedDivider={false}
+            containerProps={{
+                id: 'home-2',
+            }}
+        >
+            <SalesSection {...cakeSectionData(t)} />
+            {/*<CakeDataRow />*/}
+        </PageSection>
     </>
   )
 }

@@ -29,6 +29,10 @@ const Header = styled(S.StyledHeading)`
   min-height: 44px;
   ${({ theme }) => theme.mediaQueries.sm} {
     font-size: 40px;
+    //font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    color: #FDFDFC;
     min-height: auto;
   }
 `
@@ -76,7 +80,7 @@ const IDOBanner = () => {
                 </S.LeftWrapper>
                 <RightWrapper>
                     {isDesktop ? (
-                        <Image src={apple} alt="PerpetualBanner" width={173} height={168} placeholder="blur" />
+                        <Image src={apple} alt="PerpetualBanner" width={301} height={277} placeholder="blur" />
                     ) : (
                         <Image src={apple} alt="PerpetualBanner" width={173} height={168} placeholder="blur" />
                     )}

@@ -8,15 +8,12 @@ export const SubMenuItemWrapper = styled(Flex)<{ $isMobileOnly: boolean }>`
   width: 100%;
   overflow: hidden;
   position: relative;
-  a{
-    color:black;
-  }
 `;
 const StyledSubMenuItems = styled(Flex)`
   position: relative;
   z-index: 1;
   width: 100%;
-  display: flex;
+  display: block;
   white-space: nowrap;
   scroll-behavior: smooth;
   ${({ theme }) => theme.mediaQueries.md} {
@@ -32,7 +29,7 @@ const StyledSubMenuItems = styled(Flex)`
   &::-webkit-scrollbar {
     display: none;
   }
-  padding-top:14px;
+  //padding-top:14px;
 `;
 
 const maskSharedStyle = css`

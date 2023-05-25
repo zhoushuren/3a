@@ -35,16 +35,16 @@ const Stats = () => {
 
   return (
     <Flex justifyContent="center" alignItems="center" flexDirection="column">
-      <GradientLogo height="48px" width="48px" mb="24px" />
+      {/*<GradientLogo height="48px" width="48px" mb="24px" />*/}
       <Heading textAlign="center" scale="xl">
         {t('Used by millions.')}
       </Heading>
       <Heading textAlign="center" scale="xl" mb="32px">
         {t('Trusted with billions.')}
       </Heading>
-      <Text textAlign="center" color="textSubtle">
-        {t('PancakeSwap has the most users of any decentralized platform, ever.')}
-      </Text>
+      {/*<Text textAlign="center" color="textSubtle">*/}
+      {/*  {t('PancakeSwap has the most users of any decentralized platform, ever.')}*/}
+      {/*</Text>*/}
       <Flex flexWrap="wrap">
         <Text display="inline" textAlign="center" color="textSubtle" mb="20px">
           {entrusting}

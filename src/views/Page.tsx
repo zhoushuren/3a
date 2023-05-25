@@ -3,7 +3,7 @@ import { Box, Flex } from '@pancakeswap/uikit'
 import Footer from 'components/Menu/Footer'
 import { PageMeta } from 'components/Layout/Page'
 import { EXCHANGE_DOCS_URLS } from 'config/constants'
-
+// import swapBgDark from "../../public/images/swap_bg.png"
 const StyledPage = styled.div<{ $removePadding: boolean; $noMinHeight }>`
   display: flex;
   flex-direction: column;
@@ -12,8 +12,14 @@ const StyledPage = styled.div<{ $removePadding: boolean; $noMinHeight }>`
   padding: ${({ $removePadding }) => ($removePadding ? '0' : '16px')};
   padding-bottom: 0;
   min-height: ${({ $noMinHeight }) => ($noMinHeight ? 'initial' : 'calc(100vh - 64px)')};
-  background: ${({ theme }) => theme.colors.gradientBubblegum};
-
+  
+   //background: ${({ theme }) => theme.colors.gradientBubblegum};
+  // background-image: url('${({theme}) => (theme.isDark? 'images/swap_bg.png': 'images/swap_bg1.png')}');
+  //
+  // background-size: cover !important;
+  // background-repeat: no-repeat;
+  // background-position: center;
+  
   ${({ theme }) => theme.mediaQueries.xs} {
     background-size: auto;
   }
