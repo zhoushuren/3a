@@ -92,7 +92,7 @@ const Step1 = ({ hasProfile }: { hasProfile: boolean }) => {
     <CardBody>
       {tooltipVisible && tooltip}
       <Heading as="h4" color="secondary" mb="16px">
-        {t('Lock CAKE in the CAKE pool')}
+        {t('Lock APPLE in the APPLE pool')}
       </Heading>
       <Box>
         {/*<Text mb="4px" color="textSubtle" small>*/}
@@ -220,7 +220,7 @@ const IfoSteps: React.FC<React.PropsWithChildren<TypeProps>> = ({
               {t('Activate your Profile')}
             </Heading>
             <Text color="textSubtle" small mb="16px">
-              {t('You’ll need an active PancakeSwap Profile to take part in an IFO!')}
+              {t('You’ll need an active AppleSwap Profile to take part in an IFO!')}
             </Text>
             {/*{renderAccountStatus()}*/}
           </CardBody>
@@ -237,7 +237,7 @@ const IfoSteps: React.FC<React.PropsWithChildren<TypeProps>> = ({
             </Heading>
             <Text color="textSubtle" small>
               {t(
-                'After the IFO sales finish, you can claim any IFO tokens that you bought, and any unspent CAKE tokens will be returned to your wallet.',
+                'After the IFO sales finish, you can claim any IFO tokens that you bought, and any unspent APPLE tokens will be returned to your wallet.',
               )}
             </Text>
           </CardBody>
